@@ -968,6 +968,7 @@ function sq(str) {
           <li><a href="#" onclick="javascript:Exportd()">Client</a></li>
 		      <li><a href="#" onclick="javascript:Exportc1()">Cim(Raw)</a></li>
           <li><a href="#" onclick="javascript:Exportd1()">Cim</a></li>
+          <li><a href="#" onclick="javascript:Exportd1()">Cim</a></li>
       
 
 		  
