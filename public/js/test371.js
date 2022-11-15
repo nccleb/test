@@ -38,11 +38,11 @@ function load_unseen_notification(view = '')
 
    if(data.unseen_notification >=0)
    {
-    $('.count').html(data.unseen_notification);
+    $('#count1').html(data.unseen_notification);
     //$('#drop').html(data.notification);
    }
 
-
+/*
    $(document).on('click', '.glyphicon-bell', function(){
 
 $('#drop').html(data.notification);
@@ -51,8 +51,8 @@ load_unseen_notification('yes');
 
 });
 
-
-$(document).on('click', '.count', function(){
+*/
+$(document).on('click', '#count1', function(){
 
 //$('#drop').html('');
 
@@ -71,7 +71,7 @@ load_unseen_notification('yes');
 //load_unseen_notification();
 
 // submit form and get new records
-
+/*
 $('#comment_form').on('submit', function(event){
  event.preventDefault();
 
@@ -121,6 +121,125 @@ $(document).on('click', '.glyphicon-bell', function(){
 
 });
 
+*/
+
+
+
+
+
+
+
+function load_unseen_notification2(view = '')
+
+{
+
+ $.ajax({
+
+  url:"fetch4.php",
+  method:"POST",
+  data:{view:view},
+  dataType:"json",
+  success:function(data)
+
+  {
+
+   
+
+   if(data.unseen_notification >=0)
+   {
+    $('#count').html(data.unseen_notification);
+    //$('#drop').html(data.notification);
+   }
+
+/*
+   $(document).on('click', '.glyphicon-bell', function(){
+
+$('#drop').html(data.notification);
+
+load_unseen_notification('yes');
+
+});
+
+*/
+$(document).on('click', '#count', function(){
+
+//$('#drop').html('');
+
+load_unseen_notification2('yes');
+
+});
+
+
+
+  }
+
+ });
+
+}
+
+//load_unseen_notification();
+
+// submit form and get new records
+/*
+$('#comment_form').on('submit', function(event){
+ event.preventDefault();
+
+ if($('#subject').val() != '' && $('#comment').val() != '')
+
+ {
+
+  var form_data = $(this).serialize();
+
+  $.ajax({
+
+   url:"fetch1.php",
+   method:"POST",
+   data:form_data,
+   success:function(data)
+
+   {
+
+    $('#comment_form')[0].reset();
+    load_unseen_notification();
+
+   }
+
+  });
+
+ }
+
+ else
+
+ {
+  alert("Both Fields are Required");
+ }
+
+});
+
+// load new notifications
+
+$(document).on('click', '.glyphicon-bell', function(){
+
+ $('.count').html('0');
+ //$('.glyphicon-bell').html(data.notification);
+ //$('#drop').html(data.notification);
+   
+ //$('#drop').html(data.unseen_notification);
+ //$('#drop').html('');
+ load_unseen_notification('yes');
+
+});
+
+*/
+
+
+
+setInterval(function(){
+
+  load_unseen_notification2();;
+ 
+ }, 1000);
+ 
 
 
 
@@ -129,6 +248,11 @@ setInterval(function(){
  load_unseen_notification();;
 
 }, 1000);
+
+
+
+
+
 
 });
 

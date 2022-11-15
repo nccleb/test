@@ -3,7 +3,7 @@
 @section('content')
     <a href="/posts" class="btn btn-default">Go Back</a>
     <h1>{{$post->title}}</h1>
-    <img style="width:25%"  class = "img-circle"   src="/storage/cover_images/{{$post->cover_image}}">
+    <img style="width:15%"  class = "img-circle"   src="/storage/cover_images/{{$post->cover_image}}">
     <br><br>
     <div>
         {!!$post->body!!}
