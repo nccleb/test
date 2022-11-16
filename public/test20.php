@@ -153,7 +153,7 @@ if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['na'])&&!empty($_POST
  &&isset($_POST['inu'])&&isset($_POST['ur'])&&isset($_POST['bu'])    &&isset($_POST['ad'])&&isset($_POST['ad2'])&&isset($_POST['em'])
 &&isset($_POST['cit'])&&isset($_POST['str'])&&isset($_POST['flo'])
  &&isset($_POST['bui'])&&isset($_POST['zon'])&&isset($_POST['nea'])    &&isset($_POST['rem'])&&isset($_POST['driv'])
-&&isset($_POST['tel'])&&isset($_POST['oth'])&&isset($_POST['apa']) &&isset($_POST['pay'])&&isset($_POST['loy'])
+&&isset($_POST['tel'])&&isset($_POST['oth'])&&isset($_POST['apa']) &&isset($_POST['pay'])&&isset($_POST['loy'])&&isset($_POST['job'])
 )
 
 {
@@ -170,6 +170,7 @@ if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['na'])&&!empty($_POST
    $pay=test_input($_POST['pay']);
    $loy=test_input($_POST['loy']);
  $co=test_input($_POST['co']);
+ $jo=test_input($_POST['job']);
  $ci=test_input($_POST['cit']);
  $st=test_input($_POST['str']);
  $fl=test_input($_POST['flo']);
@@ -253,6 +254,13 @@ if (!filter_var($ur, FILTER_VALIDATE_URL)) {
 
 if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$co)) {
   echo "<p style=\"color:red;font-size:28px\">Invalid Company format!</p>"."<br/>";
+  echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
+  exit();  
+}
+
+
+if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$jo)) {
+  echo "<p style=\"color:red;font-size:28px\">Invalid Job format!</p>"."<br/>";
   echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
   exit();  
 }
@@ -486,10 +494,10 @@ for ($i=1;$i<=$lig["arr"];$i++){
 
 
 
-    $stmt = $idr->prepare("insert into client (nom,prenom,filename,company,number,inumber,email,url,business,grade,payment,card,telmobile,telother,idf,idx) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+    $stmt = $idr->prepare("insert into client (nom,prenom,filename,company,job,number,inumber,email,url,business,grade,payment,card,telmobile,telother,idf,idx) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
   
   
-     $stmt->bind_param("ssssssssssssssss",$na,$lna,$filename,$co,$nu,$inu,$em,$ur,$bu,$gra,$pay,$loy,$tel,$oth,$ps,$idx );
+     $stmt->bind_param("sssssssssssssssss",$na,$lna,$filename,$co,$jo,$nu,$inu,$em,$ur,$bu,$gra,$pay,$loy,$tel,$oth,$ps,$idx );
 
      $stmt->execute();
 

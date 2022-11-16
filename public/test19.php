@@ -144,6 +144,7 @@ function submit() {
 
 
 <p >Company  <input class="form-control"  type="text" name="co" id="co" size="32" ><p><br/>
+<p >Job Title  <input class="form-control"  type="text" name="job" id="job" size="32" ><p><br/>
 <p>E-mail <input class="form-control" type="text" name="em" id="em" size="32" ><p><br/>
 <p >Url  <input class="form-control" type="text" name="ur" id="ur" size="32" ><p><br/>
 <p >Business   <input class="form-control" type="text" name="bu" id="bu" size="33" ><p><br/>

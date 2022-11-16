@@ -50,7 +50,7 @@ session_start();
 
 <div class="container text-center"> 
 <table     align="center"        >
-<tr         ><th>ID</th><th>First name</th><th>Last name</th><th>filename</th><th>Grade</th><th>Payment</th><th>Card</th><th>Company</th><th>Number</th><th>INumber</th><th>Telmobile</th> <th>Telother</th><th>Email</th><th>url</th><th>Business</th> 
+<tr         ><th>ID</th><th>First name</th><th>Last name</th><th>filename</th><th>Grade</th><th>Payment</th><th>Card</th><th>Company</th><th>Job</th><th>Number</th><th>INumber</th><th>Telmobile</th> <th>Telother</th><th>Email</th><th>url</th><th>Business</th> 
     <th>City</th><th>Street</th><th>Floor</th><th>Apartment</th><th>Building</th><th>Zone</th><th>Near</th><th>Request</th> <th>Address</th><th>Address</th><th>Salesman</th></tr>
 <?php 
 	 $idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
@@ -82,6 +82,7 @@ if (mysqli_connect_errno()) {
 			 $pay  =$row['payment'];
 			 $loy  =$row['card'];
 			 $company=$row['company']; 
+			 $job=$row['job']; 
 			 $number=$row['number'];
 			 $inumber  =$row['inumber']; 
 			 $email=$row['email']; 
@@ -121,7 +122,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 }
 
 			
-		echo	"<tr>"."<td>".$id."</td>"."<td>".$name."</td>"."<td>".$lname."</td>"."<td>".$photo."</td>"."<td>".$grade."</td>"."<td>".$pay."</td>"."<td>".$loy."</td>"."<td>".$company."</td>"."<td>"."<a  href=\"test390.php?id=$number\">" .$number. " </a></li>"."</td>"."<td>".$inumber."</td>"."<td>".$telmobile."</td>"."<td>".$telother."</td>"."<td>".$email."</td>"."<td>".$url."</td>"."<td>". $business."</td>"."<td>".$city."</td>"
+		echo	"<tr>"."<td>".$id."</td>"."<td>".$name."</td>"."<td>".$lname."</td>"."<td>".$photo."</td>"."<td>".$grade."</td>"."<td>".$pay."</td>"."<td>".$loy."</td>"."<td>".$company."</td>"."<td>".$job."</td>"."<td>"."<a  href=\"test390.php?id=$number\">" .$number. " </a></li>"."</td>"."<td>".$inumber."</td>"."<td>".$telmobile."</td>"."<td>".$telother."</td>"."<td>".$email."</td>"."<td>".$url."</td>"."<td>". $business."</td>"."<td>".$city."</td>"
 		        ."<td>".$street."</td>"."<td>".$floor."</td>"."<td>".$apartment."</td>"."<td>".$building."</td>"."<td>".$zone."</td>"."<td>".$near."</td>"."<td>".$remark."</td>"."<td>".$address."</td>"."<td>".$address_two."<td>".$driv."</td>";
 			  
 	          

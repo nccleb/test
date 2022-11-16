@@ -386,6 +386,10 @@ function size242(){
 
 function test200(){
 
+           fieldval = document.getElementById("jo").value;
+		
+           document.getElementById("job").value = fieldval;
+
 
 
          fieldval = document.getElementById("photo").value;
@@ -1266,6 +1270,25 @@ function lac() {
   xhttp.open("GET","test397.php", true);
   xhttp.send();
 }
+
+function tac() {
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xhttp = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("iss").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET","test406.php", true);
+  xhttp.send();
+}
+
 
 
 function lcde() {

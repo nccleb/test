@@ -211,24 +211,28 @@ while($row=$result->fetch_assoc()){
 
 
 	  
-              $num=$row['number'];
-			  
+              
               
 			
+        $num=$row['number'];
 			  
 			  $inum=$row['inumber'];
 			  $pho=$row['filename'];
                
-              $name=$row['nom']; 
+        $name=$row['nom']; 
 			  $lname=$row['prenom']; 
 			  $id=$row['id'];
-		          $_SESSION["id"]=$id;
-                          $company=$row['company'];
+		          
+        $_SESSION["id"]=$id;
+                          
+        $company=$row['company'];
+        
+        $job=$row['job'];
 			  $email=$row['email'];
 			  $business=$row['business'];
 			  $grade=$row['grade'];
-                           $pay=$row['payment'];
-                           $loy=$row['card'];
+        $pay=$row['payment'];
+        $loy=$row['card'];
 			  $address=$row['address'];
 			  $address2=$row['address_two'];
 			  $url=$row['url'];
@@ -248,7 +252,7 @@ while($row=$result->fetch_assoc()){
 			 
 			  
 			 $apartment=$row['apartment'];
-		      $idx=$row['idx'];
+		    $idx=$row['idx'];
 			 
 			 
 			  
@@ -440,6 +444,13 @@ for ($i=1;$i<=$lig12["co"];$i++){
   <label for="exampleFormControlInput1" class="form-label">Company</label>
   <input type="text" class="form-control" id="company" placeholder="" name="co"     >
 </div><br>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Job Title</label>
+  <input type="text" class="form-control" id="job" placeholder="" name="job"     >
+</div><br>
+
 
 <!--p id="form">E-mail &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input class="form"  type="text" name="em" id="email" size="32" ><p><br/-->
 <div class="mb-3">
@@ -691,6 +702,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <input type="hidden" id="photo" value="<?php echo $pho?>">
 <input type="hidden" id="lnam" value="<?php echo $lname?>">
 <input type="hidden" id="com" value="<?php echo $company?>">
+<input type="hidden" id="jo" value="<?php echo $job?>">
 <input type="hidden" id="num" value="<?php echo $num?>">
 <input type="hidden" id="inu" value="<?php echo $inum?>">
 <input type="hidden" id="em" value="<?php echo $email?>">

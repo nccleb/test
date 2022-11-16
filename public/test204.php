@@ -466,7 +466,7 @@ function mapi(str) {
  <script>
 function prev(){
 	
-lac()+lcde()+stat()+  comp()+remark()+sendus()+show()+address()+address2()+loadDoc()+win()+email()+cust()+bus()+url()+wi()+test()+post12();
+tac()+lac()+lcde()+stat()+  comp()+remark()+sendus()+show()+address()+address2()+loadDoc()+win()+email()+cust()+bus()+url()+wi()+test()+post12();
 }
 function on(){
 	y=setInterval("prev()",1000);
@@ -1138,6 +1138,11 @@ if (mysqli_connect_errno()) {
    <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">LAST ACTIVITY</label>
  <p style="font-size:13px;" id="las" rows="5"  name="las" ></p>
+</div>
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">TASK</label>
+ <p style="font-size:13px;" id="iss" rows="5"  name="iss" ></p>
 </div>
 
    <div class="mb-3">
