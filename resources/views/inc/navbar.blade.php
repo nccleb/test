@@ -11,9 +11,9 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <!--a class="navbar-brand" href="{{ url('/') }}">
                 {{ config('app.name', 'Laravel') }}
-            </a>
+            </a-->
         </div>
 
         <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -24,8 +24,8 @@
             
             <ul class="nav navbar-nav">
               <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/test204.php?pag=<?php echo @$_COOKIE['oop'] ?>&pag1=<?php echo @$_COOKIE['ooq'] ?>">Crm</a></li>
+              <!--li><a href="/about">About</a></li-->
+              <li><a href="/test204.php?pag=<?php echo @$_COOKIE['oop'] ?>&pag1=<?php echo @$_COOKIE['ooq'] ?>">Cid</a></li>
               <li><a href="/posts">Blog</a></li>
             </ul>
 

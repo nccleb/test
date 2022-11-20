@@ -23,7 +23,7 @@ session_start();
 
 <body>
 <?php
-if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['na'])&&!empty($_POST['na']) &&isset($_POST['em'])&&!empty($_POST['em'])     ){
+if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['na'])&&!empty($_POST['na']) &&isset($_POST['em'])&&!empty($_POST['em']) &&isset($_POST['cnu'])&&!empty($_POST['cnu'])    ){
  
  
    
@@ -33,6 +33,7 @@ if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['na'])&&!empty($_POST
  
  $em=test_input($_POST['em']);
 
+ $cnu=test_input($_POST['cnu']);
 
 
 
@@ -57,6 +58,12 @@ if (!preg_match("/^[a-zA-Z0-9\p{Arabic} ]*$/u",$na)) {
   exit();  
 }
 if (!preg_match("/^[0-9]*$/",$nu)) {
+  echo "<p style=\"color:red;font-size:28px\">Invalid Number format!</p>"."<br/>";
+  echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
+  exit();  
+}
+
+if (!preg_match("/^[0-9]*$/",$cnu)) {
   echo "<p style=\"color:red;font-size:28px\">Invalid Number format!</p>"."<br/>";
   echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
   exit();  
@@ -91,6 +98,23 @@ while($lig=@mysqli_fetch_assoc($req2)){
 	echo "<a href=\"test400.php?page=$os&page1=$ps\"><button id=\"form\">Try again</button></a>";
 	echo exit();
 		}
+
+    if($nu!= $cnu ) {
+		
+      echo"<script>alert('Password mismatch!')</script>";
+        
+      echo "<a href=\"test400.php?page=$os&page1=$ps\"><button id=\"form\">Try again</button></a>";
+      echo exit();
+        }
+
+        if(strlen($nu)< 8 ) {
+		
+          echo"<script>alert('Password too small!')</script>";
+            
+          echo "<a href=\"test400.php?page=$os&page1=$ps\"><button id=\"form\">Try again</button></a>";
+          echo exit();
+            } 
+
 }
 
    $contact="no";

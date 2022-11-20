@@ -8,7 +8,7 @@ session_start();
 
     
     
-$os=$_SESSION["os"];
+ $os=$_SESSION["os"];
 $id=$_SESSION["id"];
 ?>
 
@@ -16,15 +16,16 @@ $id=$_SESSION["id"];
 
 <?php 
 
-    if(isset($_POST['nu'])&&!empty($_POST['nu'])&& isset($_POST['pa'])&&!empty($_POST['pa'])&& isset($_POST['em'])&&!empty($_POST['em'])){
+    if(isset($_POST['nu'])&&!empty($_POST['nu'])&& isset($_POST['pa'])&&!empty($_POST['pa'])&& isset($_POST['em'])&&!empty($_POST['em'])&& isset($_POST['cpa'])&&!empty($_POST['cpa'])){
    $nu=test_input($_POST['nu']);
     $pa=test_input($_POST['pa']);
     $em=test_input($_POST['em']);
+    $cpa=test_input($_POST['cpa']);
 	}
 else{
 	
 	echo"<script>alert('Missing Entry!')</script>";
-	echo"<script>location.replace('test242.php')</script>";
+	echo"<script>window.close()</script>";
     }
 	function test_input($data) {
   $data = trim($data);	
@@ -44,6 +45,13 @@ if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$nu)) {
 
 if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$pa)) {
   echo "<p style=\"color:red\">Invalid Tel</p>"."<br/>";
+  echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
+  exit();  
+}	 
+
+
+if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$cpa)) {
+  echo "<p style=\"color:red\">Invalid Password</p>"."<br/>";
   echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
   exit();  
 }	 
@@ -70,12 +78,18 @@ if (mysqli_connect_errno()) {
 
 
 
-
+if($pa==$cpa){
 	  
 $req4=@mysqli_query($idr,"UPDATE  form_element SET name='$nu' WHERE idf='$id' ");	
 $req5=@mysqli_query($idr,"UPDATE  form_element SET password='$pa' WHERE idf='$id' ");	
 $req6=@mysqli_query($idr,"UPDATE  form_element SET eemail='$em' WHERE idf='$id' "); 
-	  
+}
+else{
+	echo"<script>alert('Password Mismatch!')</script>";
+	
+	echo"<script>window.close()</script>";
+	}
+
 if($req4==1&&$req5==1&&$req6==1){ 
   
 	 echo "<p id=\"form\">Data is well inserted!</p>";
@@ -86,7 +100,7 @@ else{
 	echo"<script>alert('Incorrect Entry!')</script>";
 	
 	
-	echo"<script>location.replace('test242.php')</script>";
+	echo"<script>window.close()</script>";
 	}
 			
 			  

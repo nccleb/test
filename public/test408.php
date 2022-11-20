@@ -43,12 +43,12 @@ if (mysqli_connect_errno()) {
   exit();
 }
 $req=@mysqli_query($idr,"set foreign_key_checks=0");
-$req.=@mysqli_query($idr,"truncate table crm");
+$req.=@mysqli_query($idr,"truncate table posts");
 $req.=@mysqli_query($idr,"set foreign_key_checks=1");
-$req.=@mysqli_query($idr,"alter table crm auto_increment=1");
+$req.=@mysqli_query($idr,"alter table posts auto_increment=1");
 
 
-$stmt = $idr->prepare("SELECT  idc FROM crm ");
+$stmt = $idr->prepare("SELECT  id FROM posts ");
 
 	  
  

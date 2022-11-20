@@ -7,7 +7,11 @@
 
 
 
-
+function delAll5(){
+	
+  window.open ("http://localhost:8383//test407.php","","menubar=0,resizable=1,width=480,height=350");
+   
+ }
 
 
 
@@ -268,6 +272,9 @@ setInterval(function(){
 function quit(){
     window.close();
  }
+
+
+ 
 
  function refresh(){
 	window.location.reload();
@@ -713,7 +720,11 @@ function Export(){
 	
 }
 
-
+function ExportP(){
+	
+  window.open ("http://localhost:8383//test409.php","","menubar=0,resizable=1,width=480,height=300");
+   
+ }
 
 
 

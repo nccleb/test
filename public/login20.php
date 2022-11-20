@@ -92,7 +92,7 @@ session_start();
           </form>
         </div>
         <div class="modal-footer">
-          <button  onclick="quit()" class="btn btn-danger btn-default pull-left" data-dismiss="modal"><span class=""></span>cancel</button>
+          
           <span class="psw">Forgot <a href="reset_pass.php">password?</a></span>
           <!--p>Not a member? <a href="test205.php">Sign Up</a></p-->
           

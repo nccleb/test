@@ -983,7 +983,7 @@ function sq(str) {
           <li><a href="#" onclick="javascript:Exportd()">Client</a></li>
 		      <li><a href="#" onclick="javascript:Exportc1()">Cim(Raw)</a></li>
           <li><a href="#" onclick="javascript:Exportd1()">Cim</a></li>
-          
+          <li><a href="#" onclick="javascript:ExportP()">Posts(Raw)</a></li>
       
 
 		  
@@ -1001,7 +1001,7 @@ function sq(str) {
      <ul>
       <li><a href=\"#\" onclick=\"javascript:delAll()\">Delete All CLIENT</a></li>
        <li><a href=\"#\" onclick=\"javascript:delAll2()\">Delete All CIM</a></li>
-   
+       <li><a href=\"#\" onclick=\"javascript:delAll5()\">Delete All POSTS</a></li>
      </ul>          ";
 		
 	
@@ -1141,7 +1141,7 @@ if (mysqli_connect_errno()) {
 </div>
 
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">TASK</label>
+  <label for="exampleFormControlTextarea1" class="form-label">ISSUE</label>
  <p style="font-size:13px;" id="iss" rows="5"  name="iss" ></p>
 </div>
 
@@ -1226,14 +1226,15 @@ if (mysqli_connect_errno()) {
 				
 				</br>  
         <button  class="btn btn-success   btn-block    "    type="button" id="form" onclick="refresh()">R</button><br>  
-        <input type="text" id="map" value="<?php echo $mapo ?>"  class="form-control"  placeholder="Search"  ></input>
+        <!--input type="text" id="map" value="<?php echo $mapo ?>"  class="form-control"  placeholder="Search"  ></input-->
 
 
  
-<button  class="btn btn-success   btn-block "      type="button" id="form" onclick="mapi()+Map()">Map</button> 
+<!--button  class="btn btn-success   btn-block "      type="button" id="form" onclick="mapi()+Map()">Map</button--> 
 
 
 <?php
+/*
  $idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
  if (mysqli_connect_errno()) {
    echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -1394,12 +1395,11 @@ document.close();
         
     
   
-
+*/
 
 
          ?>        
   
-
               </ul>
             </p>
           </div>

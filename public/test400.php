@@ -54,7 +54,8 @@ $_SESSION["p"]=$p;
  
 <p>Username  <input  class="form-control"    type="text" name="na" id="na"  ></p><br/>
 
-<p>Password    <input  class="form-control"        type="text" name="nu" id="nu"  onclick=""></p>
+<p>Password    <input  class="form-control"        type="password" name="nu" id="nu"  onclick=""></p>
+<p>Confirm Password    <input  class="form-control"        type="password" name="cnu" id="cnu"  onclick=""></p>
 
 <p>Email    <input  class="form-control"      type="text" name="em" id="em"  onclick=""></p>
 

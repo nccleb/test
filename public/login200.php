@@ -24,9 +24,6 @@ session_start();
 
 
 
-		
-
-
 
 
 
@@ -88,7 +85,7 @@ session_start();
           </form>
         </div>
         <div class="modal-footer">
-         
+      
           <span class="psw">Forgot <a href="reset_pass.php">password?</a></span>
           <!--p>Not a member? <a href="test205.php">Sign Up</a></p-->
           

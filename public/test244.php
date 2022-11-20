@@ -82,7 +82,12 @@ function quit(){
 </div></td>
 
 
-  
+<td>
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Confirm Password</label>
+  <input class="form-control" id="pa" rows="3"  name="cpa"    value="<?php echo $password ?>"   ></input>
+</div></td>
 
 
 
