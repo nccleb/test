@@ -1,5 +1,231 @@
 
 
+  function search110(){
+	
+    window.open ("http://localhost:8383//test392.php","","menubar=0,resizable=1,width=650,height=680");
+       
+   }
+     
+
+   
+   function prev(){
+     
+   tac()+lac()+lcde()+stat()+  comp()+remark()+sendus()+show()+address()+address2()+loadDoc()+win()+email()+cust()+bus()+url()+wi()+test()+post12();
+   }
+   function on(){
+     y=setInterval("prev()",1000);
+   }
+   
+   
+   
+
+
+
+
+
+
+
+function Map() {
+
+
+var address =document.getElementById("map").value;
+          geocoder = new google.maps.Geocoder();
+          geocoder.geocode({
+          'address': address
+          }, function(results, status) {      
+              var lat=document.getElementById("lat").innerHTML=results[0].geometry.location.lat();    
+              var lng=document.getElementById("lng").innerHTML=results[0].geometry.location.lng();
+              
+              
+
+
+              var myLatlng = new google.maps.LatLng(lat,lng);
+              var mapProp = {
+              zoom: 15,
+              center: myLatlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
+              
+                
+              var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+              var marker= new google.maps.Marker(
+                    {
+                        position: myLatlng, 
+                        title:"0"
+                    }
+                );
+              
+                marker.setMap(map);
+              
+                
+                google.maps.event.addListener(marker,'click',function() {
+                  map.setZoom(20);
+                  map.setCenter(marker.getPosition());
+                });
+              
+
+              
+             
+          });
+
+          
+
+
+
+};
+  
+    
+  
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+function myMap() {
+
+
+var address = '<?php echo $city ?>';
+          geocoder = new google.maps.Geocoder();
+          geocoder.geocode({
+          'address': address
+          }, function(results, status) {      
+              var lat=document.getElementById("lat").innerHTML=results[0].geometry.location.lat();    
+              var lng=document.getElementById("lng").innerHTML=results[0].geometry.location.lng();
+              
+              
+
+
+              var myLatlng = new google.maps.LatLng(lat,lng);
+              var mapProp = {
+              zoom: 15,
+              center: myLatlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
+              
+                
+              var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+              var marker= new google.maps.Marker(
+                    {
+                        position: myLatlng, 
+                        title:"0"
+                    }
+                );
+              
+                marker.setMap(map);
+              
+                
+                google.maps.event.addListener(marker,'click',function() {
+                  map.setZoom(20);
+                  map.setCenter(marker.getPosition());
+                });
+              
+
+              
+             
+          });
+
+          
+
+
+
+};
+  
+    
+  
+  
+ 
+
+
+ 
+
+
+
+
+
+
+
+
+function mapi(str) {
+
+  var str=document.getElementById("map").value;
+  
+  var xhttp;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xhttp = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("man").value = this.responseText;
+ 
+    }
+  };
+  xhttp.open("GET","test398.php?q="+str, true);
+  xhttp.send();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function adag(){
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+myw=window.open ("http://localhost:8383/test400.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+}
+
+
+
+
+
+function delag(){
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+myw=window.open ("http://localhost:8383/test402.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+}
+
+
+
+
+
+function delal(){
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+myw=window.open ("http://localhost:8383/test404.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+}
+
+
         
 
 
@@ -152,22 +378,13 @@ function load_unseen_notification2(view = '')
    if(data.unseen_notification >=0)
    {
     $('#count').html(data.unseen_notification);
-    //$('#drop').html(data.notification);
+    
    }
 
-/*
-   $(document).on('click', '.glyphicon-bell', function(){
 
-$('#drop').html(data.notification);
-
-load_unseen_notification('yes');
-
-});
-
-*/
 $(document).on('click', '#count', function(){
 
-//$('#drop').html('');
+
 
 load_unseen_notification2('yes');
 
@@ -181,60 +398,52 @@ load_unseen_notification2('yes');
 
 }
 
-//load_unseen_notification();
 
-// submit form and get new records
-/*
-$('#comment_form').on('submit', function(event){
- event.preventDefault();
 
- if($('#subject').val() != '' && $('#comment').val() != '')
 
- {
 
-  var form_data = $(this).serialize();
+function load_unseen_notification3(view = '')
 
-  $.ajax({
+{
 
-   url:"fetch1.php",
-   method:"POST",
-   data:form_data,
-   success:function(data)
+ $.ajax({
 
+  url:"fetch5.php",
+  method:"POST",
+  data:{view:view},
+  dataType:"json",
+  success:function(data)
+
+  {
+
+   
+
+   if(data.unseen_notification >=0)
    {
-
-    $('#comment_form')[0].reset();
-    load_unseen_notification();
-
+    $('#count3').html(data.unseen_notification);
+    
    }
 
-  });
 
- }
+$(document).on('click', '#count3', function(){
 
- else
 
- {
-  alert("Both Fields are Required");
- }
+load_unseen_notification3('yes');
 
 });
 
-// load new notifications
 
-$(document).on('click', '.glyphicon-bell', function(){
 
- $('.count').html('0');
- //$('.glyphicon-bell').html(data.notification);
- //$('#drop').html(data.notification);
-   
- //$('#drop').html(data.unseen_notification);
- //$('#drop').html('');
- load_unseen_notification('yes');
+  }
 
-});
+ });
 
-*/
+}
+
+
+
+
+
 
 
 
@@ -254,7 +463,12 @@ setInterval(function(){
 }, 1000);
 
 
+setInterval(function(){
 
+  load_unseen_notification3();;
+ 
+ }, 1000);
+ 
 
 
 
@@ -396,6 +610,11 @@ function test200(){
            fieldval = document.getElementById("jo").value;
 		
            document.getElementById("job").value = fieldval;
+
+           
+           fieldval = document.getElementById("category").value;
+		
+           document.getElementById("cat").value = fieldval;
 
 
 

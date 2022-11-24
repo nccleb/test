@@ -156,6 +156,11 @@ if (mysqli_connect_errno()) {
         echo "Tel(Other):".$lig['telother']." \r\n   ";
         echo " \r\n  "; 
        }
+       
+       if( $lig['category']!=""  ){
+        echo "Category:".$lig['category']." \r\n   ";
+        echo " \r\n  "; 
+       }
 
        if( $lig['company']!=""  ){
         echo "Company:".$lig['company']." \r\n   ";

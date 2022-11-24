@@ -174,40 +174,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 360), "/");
 <html lang="en">
 <head>
 
-<script>
-
-function adag(){
-  let glob = global;
-  let glob1 = global1;
-  let glob2 = global2;
- 
-myw=window.open ("http://localhost:8383/test400.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
-}
-</script>
-
-
-<script>
-
-function delag(){
-  let glob = global;
-  let glob1 = global1;
-  let glob2 = global2;
- 
-myw=window.open ("http://localhost:8383/test402.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
-}
-</script>
-
-
-<script>
-
-function delal(){
-  let glob = global;
-  let glob1 = global1;
-  let glob2 = global2;
- 
-myw=window.open ("http://localhost:8383/test404.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
-}
-</script>
 
 
 <style>
@@ -232,171 +198,6 @@ myw=window.open ("http://localhost:8383/test404.php?page=" + encodeURI(glob)+"&p
 
 
 </style>
-
-<script>
-
-function Map() {
-
-
-var address =document.getElementById("map").value;
-          geocoder = new google.maps.Geocoder();
-          geocoder.geocode({
-          'address': address
-          }, function(results, status) {      
-              var lat=document.getElementById("lat").innerHTML=results[0].geometry.location.lat();    
-              var lng=document.getElementById("lng").innerHTML=results[0].geometry.location.lng();
-              
-              
-
-
-              var myLatlng = new google.maps.LatLng(lat,lng);
-              var mapProp = {
-              zoom: 15,
-              center: myLatlng,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-              }
-              
-                
-              var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-              var marker= new google.maps.Marker(
-                    {
-                        position: myLatlng, 
-                        title:"0"
-                    }
-                );
-              
-                marker.setMap(map);
-              
-                
-                google.maps.event.addListener(marker,'click',function() {
-                  map.setZoom(20);
-                  map.setCenter(marker.getPosition());
-                });
-              
-
-              
-             
-          });
-
-          
-
-
-
-};
-  
-    
-  
-  
- 
-
-
-</script>
-
-
-
-
-
-
-
-
-<script>
-
-function myMap() {
-
-
-var address = '<?php echo $city ?>';
-          geocoder = new google.maps.Geocoder();
-          geocoder.geocode({
-          'address': address
-          }, function(results, status) {      
-              var lat=document.getElementById("lat").innerHTML=results[0].geometry.location.lat();    
-              var lng=document.getElementById("lng").innerHTML=results[0].geometry.location.lng();
-              
-              
-
-
-              var myLatlng = new google.maps.LatLng(lat,lng);
-              var mapProp = {
-              zoom: 15,
-              center: myLatlng,
-              mapTypeId: google.maps.MapTypeId.ROADMAP
-              }
-              
-                
-              var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-              var marker= new google.maps.Marker(
-                    {
-                        position: myLatlng, 
-                        title:"0"
-                    }
-                );
-              
-                marker.setMap(map);
-              
-                
-                google.maps.event.addListener(marker,'click',function() {
-                  map.setZoom(20);
-                  map.setCenter(marker.getPosition());
-                });
-              
-
-              
-             
-          });
-
-          
-
-
-
-};
-  
-    
-  
-  
- 
-
-
-</script>
- 
-
-
-
-
-
-<script>
-
-
-function mapi(str) {
-
-  var str=document.getElementById("map").value;
-  
-  var xhttp;
-  if (window.XMLHttpRequest) {
-    // code for modern browsers
-    xhttp = new XMLHttpRequest();
-    } else {
-    // code for IE6, IE5
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("man").value = this.responseText;
- 
-    }
-  };
-  xhttp.open("GET","test398.php?q="+str, true);
-  xhttp.send();
-}
-
-
-</script>
-
-
-
-
-
-
-
 
 
 
@@ -424,14 +225,7 @@ function mapi(str) {
 
 
  
-<script>
-  function search110(){
-	
-    window.open ("http://localhost:8383//test392.php","","menubar=0,resizable=1,width=650,height=680");
-       
-   }
-     
-</script>
+
 
 
  
@@ -463,17 +257,7 @@ function mapi(str) {
  
  
 
- <script>
-function prev(){
-	
-tac()+lac()+lcde()+stat()+  comp()+remark()+sendus()+show()+address()+address2()+loadDoc()+win()+email()+cust()+bus()+url()+wi()+test()+post12();
-}
-function on(){
-	y=setInterval("prev()",1000);
-}
 
-
-</script> 
 
 
 
@@ -706,14 +490,62 @@ const global2 = document.getElementById("demo2").value;
 
 
 
+<script>
 
+	
+function myMap() {
+
+
+var address = '<?php echo $city ?>';
+          geocoder = new google.maps.Geocoder();
+          geocoder.geocode({
+          'address': address
+          }, function(results, status) {      
+              var lat=document.getElementById("lat").innerHTML=results[0].geometry.location.lat();    
+              var lng=document.getElementById("lng").innerHTML=results[0].geometry.location.lng();
+              
+              
+
+
+              var myLatlng = new google.maps.LatLng(lat,lng);
+              var mapProp = {
+              zoom: 15,
+              center: myLatlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+              }
+              
+                
+              var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+              var marker= new google.maps.Marker(
+                    {
+                        position: myLatlng, 
+                        title:"0"
+                    }
+                );
+              
+                marker.setMap(map);
+              
+                
+                google.maps.event.addListener(marker,'click',function() {
+                  map.setZoom(20);
+                  map.setCenter(marker.getPosition());
+                });
+              
+
+              
+             
+          });
+
+          
+
+
+
+};
+  
 
 	
 
-
-	
-
-
+</script>
 
 
 
@@ -843,6 +675,22 @@ function sq(str) {
 </ul>
 
 
+<!--ul class="nav navbar-nav navbar-right">
+  
+<li class="dropdown">
+
+ <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span   id="count3" class="label label-pill label-info count"  style="border-radius:10px;"></span> <span class="" id="bell3" style="font-size:18px;"></span></a>
+ 
+ <ul class="dropdown-toggle" id="drop"></ul>
+
+ 
+ 
+ 
+</li>
+
+</ul-->
+
+
 </div>
 
 
@@ -852,6 +700,25 @@ function sq(str) {
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
+
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+		  <ul>
+         
+		 
+		  <li><a href="#" onclick="javascript:search5()">Create Deals</a></li>
+		   <li><a href="#" onclick="javascript:search15()">Deals</a></li>
+		  
+		  </ul>
+          
+        </ul>
+      </li>
+
+
+
       
 	  <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">More
@@ -874,7 +741,8 @@ function sq(str) {
 	  
 	  
         
-         
+      
+	  
 		  
 	
 	  
@@ -1210,7 +1078,7 @@ if (mysqli_connect_errno()) {
 
 <th  style="width:30%"        >
 <div >
-        
+
            
             <p >MORE
               <ul class="list-group">
@@ -1226,11 +1094,11 @@ if (mysqli_connect_errno()) {
 				
 				</br>  
         <button  class="btn btn-success   btn-block    "    type="button" id="form" onclick="refresh()">R</button><br>  
-        <!--input type="text" id="map" value="<?php echo $mapo ?>"  class="form-control"  placeholder="Search"  ></input-->
+        <!--input type="text" id="map" value="<?php echo $mapo ?>"  class="form-control"  placeholder="Search"  ></input>
 
 
  
-<!--button  class="btn btn-success   btn-block "      type="button" id="form" onclick="mapi()+Map()">Map</button--> 
+<button  class="btn btn-success   btn-block "      type="button" id="form" onclick="mapi()+Map()">Map</button--> 
 
 
 <?php
@@ -1316,17 +1184,17 @@ if (mysqli_connect_errno()) {
      
     
    
-     
+     */
     
    ?> 	
    
    
-   
+  
 
  
 <?php 
 
-
+/*
 
 if ($city !=""){
  
@@ -1347,7 +1215,7 @@ document.close();
     
 
  
- elseif($mapo=="") { 
+ else if($mapo=="") { 
 
 
   echo "
@@ -1355,7 +1223,7 @@ document.close();
   <script>
                  
   document.open();
-  document.write('<iframe class=\"img-responsive\"  id=\"googleMap\" style=\"width:100%;height:355px;\"     src=\"https://maps.google.com/maps?q=hazmieh%20beirut&t=&z=13&ie=UTF8&iwloc=&output=embed\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\">');
+  document.write('<iframe class=\"img-responsive\"   style=\"width:100%;height:355px;\"     src=\"https://maps.google.com/maps?q=hazmieh%20beirut&t=&z=13&ie=UTF8&iwloc=&output=embed\" frameborder=\"0\" scrolling=\"no\" marginheight=\"0\" marginwidth=\"0\">');
   document.close();          
                   
                   
@@ -1393,19 +1261,19 @@ document.close();
     }
   
         
-    
-  
-*/
+    */
+
 
 
          ?>        
   
-              </ul>
-            </p>
           </div>
        
-</td>
+
  </th>
+
+  </tr>
+
 
 
  
@@ -1448,7 +1316,7 @@ document.close();
 
 
 
-
+ 
 
 
 
@@ -1457,23 +1325,17 @@ document.close();
 
 
  </div>
+
+
+
  
  
+ <?php include 'footer.php';?>
  
 </body>
 
 
 
-<footer class="container-fluid text-center">
-
-<p align="center"><font color="black"  >&copy 2018 Nahed Computers & Communications</font></p>
-
-<p align="center"><font color="black"  > <i class="fa fa-phone"></i> +00 961 5 454262   |    <i class="fa fa-mobile"></i> +00 961 3 205818 </font></p>
-
-<p align="center"><font color="black"  >MYPWCA 1.6.0</font></p>
-
-
-</footer>
 
 
 

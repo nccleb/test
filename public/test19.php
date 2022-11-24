@@ -117,8 +117,6 @@ function submit() {
 
 
 
-
-
 <div id="content"><p>Photo</p>
        
             <div class="form-group">
@@ -179,15 +177,36 @@ function submit() {
 <option>Cash</option>
 <option>Visa</option>
 
-</select>
-<p>
+</select><p></br>
+
+
+<p >Category
+<div class="form-check">
+  <input class="form-check-input" type="radio"  name="cat" value="Existing Client" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+   Existing Client
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="cat" value="Ignore Call" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+   Ignore Call
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="cat" value="Lead" id="flexRadioDefault3">
+  <label class="form-check-label" for="flexRadioDefault3">
+   Lead
+  </label>
+</div></br>
 
 
 
 
 </td>
-<td  valign="top"   style="align:"left"    >
-<p >City <input class="form-control" type="text" name="cit" id="cit" size="33" "><p><br>
+<td  valign="top"   style="align:left"    >
+<p >City <input class="form-control" type="text" name="cit" id="cit" size="33" ><p><br>
 <p >Zone <input class="form-control" type="text" name="zon" id="zon" size="33" ><p><br/>
 <p >Street <input class="form-control" type="text" name="str" id="str" size="32" ><p><br/>
 <p >Building  <input class="form-control" type="text" name="bui" id="bui" size="32" ><p><br/>

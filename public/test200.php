@@ -437,7 +437,17 @@ for ($i=1;$i<=$lig12["co"];$i++){
             <div class="form-group">
                 <input class="form-control" type="file" name="uploadfile" value="" />
             </div>
-  <div>          
+  <div>   
+    
+  
+<!--p id="form">Company &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company"  size="32" ><p><br/-->
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Category</label>
+  <input type="text" class="form-control" id="cat" placeholder="" name="cat"     >
+</div><br>
+
+
+
 
 <!--p id="form">Company &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company"  size="32" ><p><br/-->
 <div class="mb-3">
@@ -701,6 +711,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <input type="hidden" id="nam" value="<?php echo $name?>">
 <input type="hidden" id="photo" value="<?php echo $pho?>">
 <input type="hidden" id="lnam" value="<?php echo $lname?>">
+<input type="hidden" id="category" value="<?php echo $category?>">
 <input type="hidden" id="com" value="<?php echo $company?>">
 <input type="hidden" id="jo" value="<?php echo $job?>">
 <input type="hidden" id="num" value="<?php echo $num?>">

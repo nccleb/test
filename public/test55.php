@@ -323,7 +323,9 @@ if(isset($_POST['nu'])&&isset($_POST['na'])&&isset($_POST['lna'])&&isset($_POST[
  &&isset($_POST['inu'])&&isset($_POST['tel'])&&isset($_POST['oth'])&&isset($_POST['ur'])&&isset($_POST['bu'])    &&isset($_POST['ad'])&&isset($_POST['ad2'])&&isset($_POST['em'])
 &&isset($_POST['cit'])&&isset($_POST['str'])&&isset($_POST['flo'])
  &&isset($_POST['bui'])&&isset($_POST['zon'])&&isset($_POST['nea'])    &&isset($_POST['rem']) &&isset($_POST['apa'])&&isset($_POST['grad'])&&isset($_POST['driver'])&&isset($_POST['pay'])
- &&isset($_POST['loy'])&&isset($_POST['disa'])&&isset($_POST['disa2'])&&isset($_POST['disa2'])&&isset($_POST['pho'])&&isset($_POST['job'])
+ &&isset($_POST['loy'])&&isset($_POST['disa'])&&isset($_POST['disa2'])&&isset($_POST['disa2'])&&isset($_POST['pho'])&&isset($_POST['job'])&&isset($_POST['cat'])
+
+
  )
 
 
@@ -338,6 +340,7 @@ if(isset($_POST['nu'])&&isset($_POST['na'])&&isset($_POST['lna'])&&isset($_POST[
  $ad=test_input($_POST['ad']);
  $ad2=test_input($_POST['ad2']);
   $bu=test_input($_POST['bu']);
+  $cat=test_input($_POST['cat']);
    $co=test_input($_POST['co']);
    $jo=test_input($_POST['job']);
   $ci=test_input($_POST['cit']);
@@ -424,6 +427,14 @@ if (!filter_var($ur, FILTER_VALIDATE_URL)) {
 	
 }
 }
+
+if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$cat)) {
+  echo "<p style=\"color:red\">Invalid Company format!</p>"."<br/>";
+  echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
+  exit();  
+}
+
+
 
 if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$co)) {
   echo "<p style=\"color:red\">Invalid Company format!</p>"."<br/>";
@@ -779,8 +790,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 3600), "/");
 
      $stmt->close();
 	
-     $stmt = $idr->prepare("update client set nom=?,prenom=?,filename=?, company=?,job=?, number=?,inumber=?,email=?,business=?,grade=?,payment=?,card=?,telmobile=?,telother=?,url=?,idf=?,idx=? where id=?");
-	 $stmt->bind_param("ssssssssssssssssss", $na,$lna,$filename,$co,$jo,$nu,$inu,$em,$bu,$gra,$pay,$loy,$tel,$oth,$ur,$idf,$idx,$id);
+     $stmt = $idr->prepare("update client set nom=?,prenom=?,filename=?,category=?, company=?,job=?, number=?,inumber=?,email=?,business=?,grade=?,payment=?,card=?,telmobile=?,telother=?,url=?,idf=?,idx=? where id=?");
+	 $stmt->bind_param("sssssssssssssssssss", $na,$lna,$filename,$cat,$co,$jo,$nu,$inu,$em,$bu,$gra,$pay,$loy,$tel,$oth,$ur,$idf,$idx,$id);
 	 $stmt->execute();
 	  $test=mysqli_affected_rows($idr);
 	 $stmt->close();
