@@ -675,7 +675,7 @@ function sq(str) {
 </ul>
 
 
-<!--ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
   
 <li class="dropdown">
 
@@ -688,7 +688,7 @@ function sq(str) {
  
 </li>
 
-</ul-->
+</ul>
 
 
 </div>
@@ -709,8 +709,8 @@ function sq(str) {
 		  <ul>
          
 		 
-		  <li><a href="#" onclick="javascript:search5()">Create Deals</a></li>
-		   <li><a href="#" onclick="javascript:search15()">Deals</a></li>
+		  <li><a href="#" onclick="javascript:search51()">Create Deals</a></li>
+		   <li><a href="#" onclick="javascript:search151()">Deals</a></li>
 		  
 		  </ul>
           
@@ -1028,7 +1028,7 @@ if (mysqli_connect_errno()) {
  
       </th>
 
-      <th             >
+      <th>
 
    
   
@@ -1216,7 +1216,7 @@ document.close();
 
  
  else if($mapo=="") { 
-
+*/
 
   echo "
 
@@ -1231,7 +1231,7 @@ document.close();
   </script>
   ";
 
-
+/*
 
 
   }

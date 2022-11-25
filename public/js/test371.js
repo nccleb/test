@@ -507,6 +507,30 @@ myw=window.open ("http://localhost:8383//search.php?page=" + encodeURI(glob)+"&p
 }
 
 
+function search51(){
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+myw=window.open ("http://localhost:8383//test411.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+
+}
+
+
+function search151(){
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+myw=window.open ("http://localhost:8383//test413.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+
+
+}
+
+
+
+
+
 function search15(){
     let glob = global;
     let glob1 = global1;

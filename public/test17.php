@@ -132,7 +132,7 @@ if (mysqli_connect_errno()) {
         // echo " \r\n  ";   
         }
 	
-  if( $inc!=0 AND  $inc==$lig['number']) {
+  if( $inc!=0 AND  $inc==$lig['number'] OR $inc==$lig['inumber'] OR $inc==$lig['telmobile'] OR $inc==$lig['telother']  ) {
        if( $lig['address']!=""  ){
         echo "First address:".$lig['address']." \r\n  ";  
         echo " \r\n  "; 
