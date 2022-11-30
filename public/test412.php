@@ -67,45 +67,6 @@ while ($char !== false && $char !== "\n" && $char !== "\r") {
 <body>
 
 
-<?php
-error_reporting(0);
- 
-$msg = "";
- 
-// If upload button is clicked ...
-if (isset($_POST['upload'])) {
- 
-  $filename = $_FILES["uploadfile"]["name"];
-    //$tempname = $_FILES["uploadfile"]["tmp_name"];
-   // $folder = "./image/" . $filename;
- 
-    if(isset($_FILES['uploadfile'])&&($_FILES['uploadfile']['error']==0)){
-      if($_FILES['uploadfile']['size']<=100000000){
-    
-        $info=pathinfo($_FILES['uploadfile']['name']);
-         $target=$info['basename'];
-        
-        $extensionU=$info['extension'];
-            $extensionA=array("jpg");
-        if(in_array($extensionU,$extensionA)){
-        if(  move_uploaded_file($_FILES['uploadfile']['tmp_name'],"$target")){
-          echo "<h3>  Image uploaded successfully!</h3>";
-        } else {
-            echo "<h3>  Failed to upload image!</h3>";
-        }
-          
-        }
-        else{
-      echo "<p style=\"color:red;font-size:28px\">Invalid file type!</p>";
-       echo "<button id=\"id\" type=\"button\" onclick=\"quit()\">Quit</button>";
-      exit();
-    }
-
-      }
-    }
-  }
-
-?>
 
   
  
@@ -125,21 +86,21 @@ if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['gra'])&&!empty($_POS
 )
 
 {
- echo  $name=test_input($_POST['nu']);
+   $name=test_input($_POST['nu']);
  
- echo $owner=test_input($_POST['na']);
- echo   $contact=test_input($_POST['lna']);
+  $owner=test_input($_POST['na']);
+    $contact=test_input($_POST['lna']);
  
  
- echo  $stage=test_input($_POST['gra']);
+   $stage=test_input($_POST['gra']);
    
  
  
 
- echo  $amount=test_input($_POST['tel']);
- echo $date=test_input($_POST['oth']);
- echo  $dt=test_input($_POST['dt']);
- echo  $pr=test_input($_POST['pr']);
+   $amount=test_input($_POST['tel']);
+  $date=test_input($_POST['oth']);
+   $dt=test_input($_POST['dt']);
+   $pr=test_input($_POST['pr']);
 
 
 
@@ -282,7 +243,9 @@ if (mysqli_connect_errno()) {
 
     $stmt = $idr->prepare("insert into deals (name,stage,amount,close_date,owner,contact,type,priority) values(?,?,?,?,?,?,?,?)");
   
-  
+    if($date==""){
+      $date="0001-01-01";
+    }
     $stmt->bind_param("ssssssss",$name,$stage,$amount,$date,$owner,$contact,$dt,$pr );
 
     $stmt->execute();

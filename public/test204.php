@@ -50,6 +50,10 @@ while ($char !== false && $char !== "\n" && $char !== "\r") {
  //$inc="5010";
  
 
+
+
+
+ 
  
  
 	$idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
@@ -755,7 +759,7 @@ function sq(str) {
 		   <li><a href="#" onclick="javascript:list79()">Simple List(Crm)</a></li>
 		  
           <li><a href="#" onclick="javascript:incidents()">Complaints</a></li>
-          <li><a href="#" onclick="javascript:incidents2()">Statistics</a></li>
+          <li><a href="#" onclick="javascript:incidents2()">Statistics(Complaints)</a></li>
 		  
 		 </ul>
 		  
@@ -1059,7 +1063,8 @@ if (mysqli_connect_errno()) {
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">ADDRESS</label>
-  <textarea class="form-control" id="cp" rows="38"  name="cp"      ></textarea>
+
+  <textarea   style="  background-color: lightblue;"   class="form-control" id="cp" rows="38"  name="cp"      ></textarea>
 </div>
 
 <!--div class="mb-3">

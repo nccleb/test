@@ -120,7 +120,7 @@ function submit() {
 
 <select class="form-control"  required   name="gra">
 
-<option value="" disabled selected>Select something...</option>
+<option value=""  selected>Select something...</option>
 
 <option>prospecting</option>
 <option>Qualification</option>
@@ -136,7 +136,7 @@ function submit() {
  <p >Amount  <input class="form-control" type="text" name="tel" id="tel" size="32" ><p><br/> 
  <p >Close date   <input class="form-control" type="date" name="oth" id="oth" size="32"><p><br/>    
 <p >Deal owner <input class="form-control" value="<?php echo $o ?> " type="text" name="na" id="ap" size="32" ><p><br/>
-<p>Contact <input class="form-control" type="text" name="lna" id="lap" size="32" ><p><br/>
+<p>Contact <input class="form-control"  placeholder="Required"    type="text" name="lna" id="lap" size="32" ><p><br/>
 
 
 
@@ -149,7 +149,7 @@ function submit() {
 <p >Deal type
 <select class="form-control"     name="dt">
 
-<option value="" disabled selected>Select something...</option>
+<option value=""  selected>Select something...</option>
 
 <option>New business</option>
 <option>Existing Business</option>
@@ -163,7 +163,7 @@ function submit() {
 <p> Priority
 <select class="form-control"     name="pr">
 
-<option value="" disabled selected>Select something...</option>
+<option value=""  selected>Select something...</option>
 
 <option>Low</option>
 <option>Medium</option>

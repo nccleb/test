@@ -108,6 +108,7 @@ if (isset($_POST['upload'])) {
 ?>
 
   <?php
+  /*
 require_once "vendor/autoload.php";
  
 use Google\Cloud\Storage\StorageClient;
@@ -136,7 +137,7 @@ try {
 } catch(Exception $e) {
      $e->getMessage();
 }
-
+*/
 ?>
 
 

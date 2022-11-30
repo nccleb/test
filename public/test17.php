@@ -1,18 +1,16 @@
 <?php
 session_start();
-?>
-<?php
-session_start();
-?>
-<?php
+
+
+
   $inc2=$_GET["number"];
  
 $inc="0";
-?>
 
-<?php $opic=   "c".":"."\\"."Mdr"."\\"."CallerID".date("Y")."-". date("m")."."."txt" ?>
 
-<?php
+ $opic=   "c".":"."\\"."Mdr"."\\"."CallerID".date("Y")."-". date("m")."."."txt" ;
+
+
 $fichier="CaCallStatus.dat";
 $xml=simplexml_load_file($fichier);
 foreach($xml as $CallRecord){
@@ -42,6 +40,11 @@ while ($char !== false && $char !== "\n" && $char !== "\r") {
   $inc= substr($line,49,8);
    $inc = trim($inc);
  fclose($f);
+
+
+
+ 
+
 
 
 /*
@@ -110,8 +113,8 @@ echo $data = curl_exec($ch);
 $response = file_get_contents('https://lithe-key-194716.uc.r.appspot.com/test399.php?ip='.$inc);
 //print_r( $response );
 
-
-
+?>
+<?php
 
 
 	   $idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
@@ -126,12 +129,13 @@ if (mysqli_connect_errno()) {
 	  
 	  
 	  while($lig=@mysqli_fetch_assoc($result)){
-
+    
       if( $inc!=0 AND  $inc==$lig['number']) {
         
-        // echo " \r\n  ";   
+       
+
         }
-	
+
   if( $inc!=0 AND  $inc==$lig['number'] OR $inc==$lig['inumber'] OR $inc==$lig['telmobile'] OR $inc==$lig['telother']  ) {
        if( $lig['address']!=""  ){
         echo "First address:".$lig['address']." \r\n  ";  

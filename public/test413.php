@@ -34,7 +34,7 @@ session_start();
 
 <div class="container text-center"> 
 <table class="table">
-<tr><th>Id</th><th>Name</th><th>Stage</th><th>Account</th> 
+<tr><th>Id</th><th>Name</th><th>Stage</th><th>Amount</th> 
    <th>Close Date</th><th>Owner</th><th>Contact</th> <th>Type</th><th>Priority</th></tr>
 <?php 
 	 
@@ -58,7 +58,7 @@ if (mysqli_connect_errno()) {
 		     $id  =$row['id']; 
 	         $name  =$row['name']; 
 			 $stage=$row['stage']; 
-			 $account=$row['account'];
+			 $amount=$row['amount'];
 			 $date  =$row['close_date']; 
 			 $owner=$row['owner']; 
 			 $contact=$row['contact'];

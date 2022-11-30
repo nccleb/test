@@ -26,7 +26,7 @@
 
 <?php
 
-echo"<p id=\"form\"> Are you sure you want to export Client Data?</p>"."<br/>";
+echo"<p id=\"form\"> Are you sure you want to export Posts?</p>"."<br/>";
 		
 		 echo "<a href=\"test410.php\"><button class=\"whatsappbutton\">Yes</button></a>";
 	     echo "<button class=\"whatsappbutton\" type=\"button\" onclick=\"quit()\">No</button>";

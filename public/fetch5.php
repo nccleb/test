@@ -9,7 +9,7 @@ if(isset($_POST['view'])){
 // $con = mysqli_connect("localhost", "root", "", "notif");
 if($_POST["view"] != '')
 {
-   $update_query = "UPDATE posts SET post_status = 1 WHERE post_status=0";
+   $update_query = "UPDATE deals SET post_status = 1 WHERE post_status=0";
    mysqli_query($con, $update_query);
 }
 /*
@@ -36,7 +36,7 @@ else{
     $output .= '<li><a href="#" class="text-bold text-italic">No Notifications Found</a></li>';
 }
 */
-$status_query = "SELECT * FROM posts WHERE post_status=0";
+$status_query = "SELECT * FROM deals WHERE post_status=0";
 $result_query = mysqli_query($con, $status_query);
 $count = mysqli_num_rows($result_query);
 $data = array(
