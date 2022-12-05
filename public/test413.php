@@ -44,6 +44,17 @@ if (mysqli_connect_errno()) {
   exit();
 }
 
+
+
+
+
+
+
+
+
+
+	  
+
          $result=mysqli_query($idr,"select * from deals
 	  ORDER BY id DESC
         
@@ -67,7 +78,22 @@ if (mysqli_connect_errno()) {
 			 
 
 			 
+             $stmt = $idr->prepare("select * from client c , crm cr where c.id = cr.id  
+             and (number=? or inumber=? or telmobile=? or telother=?)
+             ");
+             
+             $stmt->bind_param("iiii",$contact,$contact,$contact,$contact );
+             $stmt->execute();
+             
+             $req2 = $stmt ->get_result();
 
+             while($row=mysqli_fetch_assoc($req2)){ 
+                $contact  =$row['nom']." ".$row['prenom']; 
+                
+                
+             }
+             
+             $stmt->close();
 
 			 
 	  

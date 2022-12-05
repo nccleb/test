@@ -214,14 +214,39 @@ if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$dat
 }	
 
 
-?>
 
+
+
+?>
+<?php
 
 	
+$idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
+if (mysqli_connect_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  exit();
+}
 
 
+$stmt = $idr->prepare("select id  from client where number=? or inumber=? or telmobile=? or telother=? ");
+
+   $stmt->bind_param("iiii",$contact,$contact,$contact,$contact );
+   $stmt->execute();
+
+     $req2= $stmt ->get_result();
+
+     $stmt->close();
+
+					
+	while($lig=@mysqli_fetch_assoc($req2)){
+  $id1=$lig['id'];
+ 
+ 
+	}
+	 $stmt->close();
 
 
+?>
 	
 
 
@@ -241,12 +266,12 @@ if (mysqli_connect_errno()) {
 }
 
 
-    $stmt = $idr->prepare("insert into deals (name,stage,amount,close_date,owner,contact,type,priority) values(?,?,?,?,?,?,?,?)");
+    $stmt = $idr->prepare("insert into deals (name,stage,amount,close_date,owner,contact,type,priority,idd) values(?,?,?,?,?,?,?,?,?)");
   
     if($date==""){
       $date="0001-01-01";
     }
-    $stmt->bind_param("ssssssss",$name,$stage,$amount,$date,$owner,$contact,$dt,$pr );
+    $stmt->bind_param("ssssssssi",$name,$stage,$amount,$date,$owner,$contact,$dt,$pr,$id1 );
 
     $stmt->execute();
 

@@ -874,6 +874,7 @@ function sq(str) {
       <li><a href=\"#\" onclick=\"javascript:delAll()\">Delete All CLIENT</a></li>
        <li><a href=\"#\" onclick=\"javascript:delAll2()\">Delete All CIM</a></li>
        <li><a href=\"#\" onclick=\"javascript:delAll5()\">Delete All POSTS</a></li>
+       <li><a href=\"#\" onclick=\"javascript:delAll6()\">Delete All DEALS</a></li>
      </ul>          ";
 		
 	

@@ -241,6 +241,12 @@ function delAll5(){
 
 
 
+ function delAll6(){
+	
+  window.open ("http://localhost:8383//test416.php","","menubar=0,resizable=1,width=480,height=350");
+   
+ }
+
 
 
 
