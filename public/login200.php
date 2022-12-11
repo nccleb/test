@@ -4,7 +4,9 @@ session_start();
 
  $_SESSION["password"];
 
-
+ $cookie_name = "oop";
+ $cookie_value ="";
+setcookie($cookie_name, $cookie_value, time() + (86400 * 360), "/"); 
 
 
 ?>

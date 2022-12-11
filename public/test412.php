@@ -290,7 +290,7 @@ if (mysqli_connect_errno()) {
   
 	
 	
-	$stmt = $idr->prepare("select id  from deals where name=? ");
+	$stmt = $idr->prepare("select idce  from deals where name=? ");
    
    $stmt->bind_param("s",$name );
    $stmt->execute();

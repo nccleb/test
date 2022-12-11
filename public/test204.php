@@ -153,7 +153,12 @@ while($row=$result->fetch_assoc()){
 $cookie_name = "user";
 $cookie_value = $_POST['bp'];
 setcookie($cookie_name, $cookie_value, time() + (86400 * 360), "/"); 
+  
    $nam=$_GET['pag'];
+   if($nam == ""){
+    exit( "sorry! You have to login first in mypwca!"    );
+    
+   }
   $idf=$_GET['pag1'];
 
 $_SESSION["oop"]=$nam;
@@ -161,7 +166,7 @@ $_SESSION["ooq"]=$idf;
 
 
 $cookie_name = "oop";
-$cookie_value =$nam;
+ $cookie_value =$nam;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 360), "/"); 
 
  
@@ -364,134 +369,6 @@ const global1 = document.getElementById("demo1").value;
 const global2 = document.getElementById("demo2").value;
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -711,8 +588,8 @@ function sq(str) {
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
 		  <ul>
-         
-		 
+      <li><a href="#" onclick="javascript:uro3()">Search</a></li>  
+		  <li><a href="#" onclick="javascript:search52()">Latest Deal</a></li>
 		  <li><a href="#" onclick="javascript:search51()">Create Deals</a></li>
 		   <li><a href="#" onclick="javascript:search151()">Deals</a></li>
 		  
@@ -1099,7 +976,7 @@ if (mysqli_connect_errno()) {
                 <li class="list-group-item "><a href="#" onclick="javascript:uro2()">Search</a></li>
 				
 				</br>  
-        <button  class="btn btn-success   btn-block    "    type="button" id="form" onclick="refresh()">R</button><br>  
+        <button  class="btn btn-success   btn-block    "    type="button" id="form" onclick="refresh()">R</button>
         <!--input type="text" id="map" value="<?php echo $mapo ?>"  class="form-control"  placeholder="Search"  ></input>
 
 
@@ -1356,3 +1233,131 @@ document.close();
 
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

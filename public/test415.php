@@ -1,6 +1,6 @@
 <?php
 session_start();
-  $id=$_SESSION["id"];
+ $id=$_SESSION["id"];
   
  $os=$_SESSION["os"];
  
@@ -73,18 +73,18 @@ function add(){
 
 <?php
 if(isset($_POST['nam'])&&isset($_POST['sta'])&&isset($_POST['amo'])
-&&isset($_POST['dat'])&&isset($_POST['own'])&&isset($_POST['con'])&&isset($_POST['typ'])
+&&isset($_POST['dat'])&&isset($_POST['typ'])
 &&isset($_POST['pri'])
 ){
  
-   $name=test_input($_POST['nam']);
-   $stage=test_input($_POST['sta']);
-  $amount=test_input($_POST['amo']);
-  $date=test_input($_POST['dat']);
-  $owner=test_input($_POST['own']);
-  $contact=test_input($_POST['con']);
-  $type=test_input($_POST['typ']);
-  $priority=test_input($_POST['pri']);
+    $name=test_input($_POST['nam']);
+    $stage=test_input($_POST['sta']);
+   $amount=test_input($_POST['amo']);
+   $date=test_input($_POST['dat']);
+  
+ 
+    $type=test_input($_POST['typ']);
+   $priority=test_input($_POST['pri']);
 	}
 	
 	
@@ -133,17 +133,9 @@ if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$amo
   echo "<button id=\"form\"   type=\"button\" onclick=\"quit()\">Quit</button>";
   exit();  
 }
-if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$owner)) {
-  echo "<p style=\"color:red\">Invalid Owner format!</p>"."<br/>";
-  echo "<button  id=\"form\" type=\"button\" onclick=\"quit()\">Quit</button>";
-  exit();  
-}
 
-if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$contact)) {
-    echo "<p style=\"color:red\">Invalid Contact format!</p>"."<br/>";
-    echo "<button  id=\"form\" type=\"button\" onclick=\"quit()\">Quit</button>";
-    exit();  
-  }
+
+
 
 
   if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$type)) {
@@ -170,39 +162,10 @@ if (mysqli_connect_errno()) {
 }
 
 
-   $stmt = $idr->prepare("SELECT * from deals 
-
-
-                   where id=? 
-				   
-                   
-				   
-                       
-					  
-
-                  
-                    
-					
-					
-					");
-
- 
-   $stmt->bind_param("i",$id );
-   $stmt->execute();
-
-     $result= $stmt ->get_result();
-
-     $stmt->close();
-
-	
-     
+  
 
 
 
-
-
-
-while($lig=$result->fetch_assoc()){
 
 
 
@@ -211,14 +174,14 @@ while($lig=$result->fetch_assoc()){
    
 	 
 	
-  $stmt = $idr->prepare("UPDATE deals set name=?,stage=?,amount=?,close_date=?,owner=?,contact=?,type=?,priority=?  where id=? ");
-  $stmt->bind_param("ssssssssi", $name,$stage,$amount,$date,$owner,$contact,$type,$priority,$id);
+  $stmt = $idr->prepare("UPDATE deals set name=?,stage=?,amount=?,close_date=?,type=?,priority=?  where idce=? ");
+  $stmt->bind_param("ssssssi", $name,$stage,$amount,$date,$type,$priority,$id);
   $stmt->execute();
 
   $test=mysqli_affected_rows($idr)."<br>";
   $stmt->close();
  
-}
+
  
  
    if($test != -1 && $test != 0   ){

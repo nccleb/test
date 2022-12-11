@@ -523,6 +523,18 @@ myw=window.open ("http://localhost:8383//test411.php?page=" + encodeURI(glob)+"&
 }
 
 
+
+function search52(){
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+myw=window.open ("http://localhost:8383//test418.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+
+}
+
+
+
 function search151(){
   let glob = global;
   let glob1 = global1;
@@ -1032,6 +1044,20 @@ function Exportd1(){
     myw=window.open ("http://localhost:8383//before.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
     }
  
+    
+
+    function uro3(){
+	
+ 
+      let glob = global;
+      let glob1 = global1;
+      let glob2 = global2;
+     
+  myw=window.open ("http://localhost:8383//before2.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+  }
+
+
+
 
     
     function search10(){

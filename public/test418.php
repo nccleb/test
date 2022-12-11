@@ -1,3 +1,7 @@
+
+	<?php
+session_start();
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,18 +12,61 @@
   <link rel="stylesheet" href="css/whatsappButton.css" />
   <script src="js/test371.js"></script>
 
-	<?php
-session_start();
- 
  
   
+<?php 
+
+$opic=   "c".":"."\\"."Mdr"."\\"."CallerID".date("Y")."-". date("m")."."."txt" ;
+
+
+
+
+$fichier="CaCallStatus.dat";
+$xml=simplexml_load_file($fichier);
+foreach($xml as $CallRecord){
+    $ext=$show->ext;
+   $inc=$CallRecord->CallerID;;
+   
+}  
+
+
+
+
+
+
+
+
+
+$line = '';
+//$f = fopen("c:\MDR\CallerID2022-09.txt", 'r');
+$f = fopen("$opic", 'r');
+$cursor = -1;
+fseek($f, $cursor, SEEK_END);
+$char = fgetc($f);
+//Trim trailing newline characters in the file
+while ($char === "\n" || $char === "\r") {
+   fseek($f, $cursor--, SEEK_END);
+   $char = fgetc($f);
+}
+//Read until the next line of the file begins or the first newline char
+while ($char !== false && $char !== "\n" && $char !== "\r") {
+   //Prepend the new character
+   $line = $char . $line;
+   fseek($f, $cursor--, SEEK_END);
+   $char = fgetc($f);
+}
+  $inc= substr($line,49,8);
+  $inc = trim($inc);
+ fclose($f);
+ 
+ //$inc="5010";
 	 
 	  
 	 
- $id=$_GET['id'];     
+ //$id=$_GET['page2'];     
 
 
-$_SESSION["id"]=$id;
+//$_SESSION["id"]=$id;
 
 
 
@@ -36,28 +83,21 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
- $id=$_GET['id']; 
-
-
-
-
-
+//$id=$_GET['id']; 
 
 
 
 $stmt = $idr->prepare("select *  from deals d , client c
 where d.idd = c.id
-AND d.idce=? 
+AND c.number=? 
 ORDER BY d.idce DESC LIMIT 1
 
 ");
 
-
-
- 
+   
 					
     
-     $stmt->bind_param("i",$id );
+     $stmt->bind_param("s",$inc );
 
      $stmt->execute();
      $req2 = $stmt ->get_result();
@@ -66,19 +106,33 @@ ORDER BY d.idce DESC LIMIT 1
    
  
   while($row=mysqli_fetch_assoc($req2)){ 
-    
-	          $name =$row['name'];
+          $id = $row['idce'];
+	         $name =$row['name'];
          
-           
+          
        $stage =$row['stage'];
 	    $amount =$row['amount'];
        $date=$row['close_date']; 
         $owner=$row['owner']; 	   
-        $contact  =$row['nom']." ".$row['prenom']; 
+        $contact1  =$row['nom']." ".$row['prenom']; 
 			   $type=$row['type'];
 			   $priority =$row['priority'];
+
+
+        
+            
+            
+         }
+
+         $_SESSION["id"]=$id;
+         
+         $stmt->close();
+
+
+
+
 			 
-	  }  
+	
  
 
 
@@ -254,14 +308,14 @@ function submit() {
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Owner</label>
-  <input type="text" class="form-control"  readonly  id="own" placeholder="" name="own"     >
+  <input type="text" class="form-control" readonly id="own" placeholder="" name="own"     >
 </div>
 
 
 
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Contact</label>
-  <input type="text" class="form-control"  readonly  id="con" placeholder="" name="con"  >
+  <input type="text" class="form-control" readonly id="con" placeholder="" name="con"  >
 </div>
 
 <div class="mb-3">
@@ -283,7 +337,7 @@ function submit() {
 <input type="hidden" id="am" value="<?php echo $amount?>">
 <input type="hidden" id="da" value="<?php echo $date?>">
 <input type="hidden" id="ow" value="<?php echo $owner?>">
-<input type="hidden" id="co" value="<?php echo $contact?>">
+<input type="hidden" id="co" value="<?php echo $contact1?>">
 <input type="hidden" id="ty" value="<?php echo $type?>">
 <input type="hidden" id="pr" value="<?php echo $priority?>">
 

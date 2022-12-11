@@ -136,7 +136,7 @@ function submit() {
  <p >Amount  <input class="form-control" type="text" name="tel" id="tel" size="32" ><p><br/> 
  <p >Close date   <input class="form-control" type="date" name="oth" id="oth" size="32"><p><br/>    
 <p >Deal owner <input class="form-control" value="<?php echo $o ?> " type="text" name="na" id="ap" size="32" ><p><br/>
-<p>Contact Number <input class="form-control"  placeholder="Required"    type="text" name="lna" id="lap" size="32" ><p><br/>
+<p>Contact Number <input class="form-control"  placeholder="Required" value="<?php echo $inc ?> "   type="text" name="lna" id="lap" size="32" ><p><br/>
 
 
 

@@ -6,8 +6,9 @@
 
 
 
-
-
+	<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,8 @@
    
   <link rel="stylesheet" href="css/whatsappButton.css" />
   <script src="js/test371.js"></script>
+ <?php
 
-	<?php
-session_start();
   $uif=urldecode($_GET['page2']);
  
   if(isset($_POST['more'])&&!empty($_POST['more'])){ 
