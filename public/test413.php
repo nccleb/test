@@ -34,7 +34,7 @@ session_start();
 
 <div class="container text-center"> 
 <table class="table">
-<tr><th>Id</th><th>Name</th><th>Stage</th><th>Amount</th> 
+<tr><th>Id</th><th>Name</th><th>Description</th><th>Stage</th><th>Amount</th> <th>Contact Date</th>
    <th>Close Date</th><th>Owner</th><th>Contact</th> <th>Type</th><th>Priority</th></tr>
 <?php 
 	 
@@ -64,7 +64,6 @@ ORDER BY d.idce DESC
 	 
 	  
 	  
-	  $count=mysqli_num_rows( $result);
 	  
 	  
 			 
@@ -76,7 +75,8 @@ ORDER BY d.idce DESC
              $stmt->execute();
              
              $req2 = $stmt ->get_result();
-
+             $count=mysqli_num_rows( $req2);
+	  
              while($row=mysqli_fetch_assoc($req2)){ 
 				
 				    $id  =$row['idce']; 
@@ -88,8 +88,8 @@ ORDER BY d.idce DESC
 					$contact  =$row['nom']." ".$row['prenom']; 
 					$type  =$row['type']; 
 					$priority=$row['priority']; 
-                
-                
+                    $description=$row['description']; 
+					$daat =$row['contact_date'];    
         
              
              $stmt->close();
@@ -101,13 +101,15 @@ ORDER BY d.idce DESC
 
 					
 			
-		echo	"<tr><td>"."<a  href=\"test414.php?id=$id&name=$name\">" .$id. " </a></li>\n"."</td><td>".$name."</td>"."<td>".$stage."</td>"."<td>".$amount."</td>"
-		     ."<td>".$date."</td>"."<td>".$owner."</td>"."<td>". $contact ."</td>"."<td>".$type."</td>"."<td>".$priority."</td>"."</tr>";
+		echo	"<tr><td>"."<a  href=\"test414.php?id=$id&name=$name\">" .$id. " </a></li>\n"."</td><td>".$name."</td>"."<td>".$description."</td>"."<td>".$stage."</td>"."<td>".$amount."</td>"
+		."<td>".$daat."</td>"."<td>".$date."</td>"."<td>".$owner."</td>"."<td>". $contact ."</td>"."<td>".$type."</td>"."<td>".$priority."</td>"."</tr>";
 		
 	          
 	  }
 	
 	  ?>
+
+
 	 	<tr><td ><?php echo $count?>
 		 </tr>
 		 

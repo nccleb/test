@@ -17,12 +17,6 @@ $_SESSION["anam"]=$idf;
 ?>
 
 
-
-
-
-
-
-
 <?php
  $idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
 if (mysqli_connect_errno()) {
@@ -30,15 +24,13 @@ if (mysqli_connect_errno()) {
   exit();
 }
 if(isset($_POST['search'])){
-	 $y=$_POST['name'];
-	 $c=$_POST['cat'];
+	 $t=$_POST['task'];
 	 $startdate=$_POST['startdate'];
 	 $enddate=$_POST['enddate'];
   $req82=mysqli_query($idr,"select * from client c , crm cr  
 where c.id=cr.id and lcd between \"$startdate\" and\"$enddate\" 
 	
-AND idfc= '$y'	
-AND category='$c'
+AND task !=''
 order by lcd");
  
 
@@ -107,16 +99,17 @@ if (mysqli_connect_errno()) {
 if(isset($_POST['search'])&&isset($_POST['name'])){
 	 $y=$_POST['name'];
 	 $z=$_POST['nam'];
-	// $w=$_POST['task'];
+	
 	 $startdate=$_POST['startdate'];
 	 $enddate=$_POST['enddate'];
- $req8=mysqli_query($idr,"select * from client c , crm cr  
-where c.id=cr.id 
-AND idfc=$idf
-AND num=$z
-and lcd between \"$startdate\" and\"$enddate\" order by lcd	
+ $req8=mysqli_query($idr,"select * from deals 
+ where owner = '$y'
+ and contact = '$z'
+ and close_date between \"$startdate\" and\"$enddate\" 
+ order by close_date	
+
 ");
-  $count=mysqli_num_rows($req5);
+  $count=mysqli_num_rows($req8);
 }
 ?>
 
@@ -327,7 +320,7 @@ if(isset($_POST['search'])){
 where c.id=cr.id and lcd between \"$startdate\" and\"$enddate\" 
 
 AND task='$t'
- AND num='$z'
+ AND num=$z
 order by lcd");
  
 
@@ -379,7 +372,7 @@ order by lcd");
 
 <center>
 
-<p>TELEPHONE CALLS REPORT</p>
+<p>DEALS REPORT</p>
 <HR/>
 
 
@@ -465,13 +458,17 @@ if (result) {
     <th>Name</th>
   
 	
-	<th> Task</th>
-	<th> Activity</th>
+	<th> Description</th>
+	<th> Stage</th>
 	
-	 <th>Comments</th>
-	 <th>Status</th>
-    <th>Date</th>
-	<th>Agent</th>
+	 <th>Amount</th>
+	 <th>Contact Date</th>
+	 <th>Close Date</th>
+    <th>Owner</th>
+	<th>Contact</th>
+	<th>Type </th>
+    <th>Priority</th>
+
   </tr>
   
 
@@ -482,19 +479,19 @@ if (result) {
 
 
 if($idf=="1" OR $idf=="2"){
-if($count=="0")
-{
-	echo"<h2>No Activities Found!</h2>";
-}
+//if($count=="0")
+//{
+	//echo"<h2>No Activities Found!</h2>";
+//}
 
 
-else if($y=="*#" ){
+ if($y=="*#" ){
 	
 	
 	
 	
 	echo "<tr>";
-    echo "<td>".$y."</td>";
+    echo "<td>"."</td>";
 	
 	echo "<td>"."</td>";
     echo "<td>"."</td>";
@@ -1238,90 +1235,76 @@ else if($y!=="*" && $z==""){
 
 $count=mysqli_num_rows($req5);	
  echo "<tr><td style=\"color:blue\">". $count. "</tr>";
- //echo "5";
-
+ 
 
 }
 
 
 
-else if($y!=="*" && $z!==""){
+else if($y!="" && $z!=""){
 	
 	
 	
 	
 	
-	echo "<tr>";
-    echo "<td>".$y."</td>";
-	echo "<td>"."</td>";
-    echo "<td>"."</td>";
-    echo"<td>"."</td>";
-	echo"<td>"."</td>";
-	echo"<td>"."</td>";
-	echo"<td>"."</td>";
-    echo "</tr>";
 	
 	
-	while($row=mysqli_fetch_array($req3)){
-		$id=$row['nom'] ;
-		$fid= $row['prenom'];
-		 $lcd=$row['lcd'];
-		 $agent=$row['idfc'];
-		 $number=$row['number'];
-		 $incident=$row['incident'];
-		 //$_SESSION["incident"]=$nam;
-		 $la=$row['la'];
-		  $_SESSION["la"]=$la;
-		 $idc=$row['idc'];
-		 $status=$row['status'];
-		 $task=$row['task'];
-		 $cat=$row['category'];
-		 $opp=$row['opp'];
- 
- 
-
-
-		$req11=@mysqli_query($idr," select * from form_element order by idf asc  ");
-		$req12=@mysqli_query($idr," SELECT COUNT(idf) as co  FROM form_element; ");
+	
+	while($row=mysqli_fetch_array($req8)){
+		$id=$row['idce'] ;
+		$name=$row['name'] ;
+		$descr= $row['description'];
+		$_SESSION['de']=$descr;
+		 $stage=$row['stage'];
+		 $amount=$row['amount'];
+		 $contact_date=$row['contact_date'];
+		 $close_date=$row['close_date'];
+		 $owner=$row['owner'];
 		
-		$lig12=@mysqli_fetch_assoc($req12);
-		for ($i=1;$i<=$lig12["co"];$i++){
-			
-			$lig11=@mysqli_fetch_assoc($req11);
-			   $_SESSION["$i"]= $lig11["name"];
-			   
-			
-				if($agent==$i){
-				
-			  
-			   $driv=$_SESSION["$i"];
+		 $contact=$row['contact'];
+		 
+		 $type=$row['type'];
+		 $priority=$row['priority'];
+		 
+ 
+ 
+
+
 		
 		echo "<tr>";
-    echo "<td>".$row['nom']." ".$row['prenom']."</td>";
+        echo"<td>".$name."</td>";
 	
-	echo"<td>".$row['task']."</td>";
-	 echo"<td>".$row['la']."</td>";
+	echo"<td>".$descr."</td>";
+	echo"<td>". $stage."</td>";
 	 
-	 echo"<td>".$row['incident']."</td>";
-	  echo "<td>".$row['status']."</td>";
+	echo"<td>".$amount."</td>";
+
+    echo "<td>".$contact_date."</td>";
+
+	echo "<td>".$close_date."</td>";
 	 
-	echo"<td>".$row['lcd']."</td>";
-	echo"<td>".$driv."</td>";
-	echo "<td>"."<button class=\"printPageButton\" onclick=\"window.location='test343.php?id=$id&fid=$fid&lcd=$lcd&agent=$agent&status=$status&idc=$idc&tas=$task&la=$la&incident=$incident '\"></button>"."</td>";
+	echo"<td>".$owner."</td>";
+	echo"<td>".$contact."</td>";
+
+    echo"<td>".$type."</td>";
+	echo"<td>".$priority."</td>";
+
+	echo "<td>"."<button class=\"printPageButton\" onclick=\"window.location='test422.php?id=$id&name=$name&stage=$stage&amount=$amount&contact_date=$contact_date&close_date=$close_date&owner=$owner&contact=$contact&type=$type&priority=$priority '\"></button>"."</td>";
+	//echo "<td>"."<button  class=\"printPageButton\" onclick=\"window.location='test422.php?id=$id&name=$name&description=$description '\"></button>"."</td>";
     echo "</tr>";
   
 				}
-			}
-		
+			
+                $count=mysqli_num_rows($req8);	
+                echo "<tr><td style=\"color:blue\">". $count. "</tr>";
 		
 }
 
 
-$count=mysqli_num_rows($req3);	
-echo "<tr><td style=\"color:blue\">". $count. "</tr>";
-//echo "3";
 
-}
+
+
+
 
 
 else if($y!=="*" && $z!=="" && $t!==""){
@@ -1624,12 +1607,14 @@ echo "<tr><td style=\"color:blue\">". $count. "</tr>";
 <div  id="printDiv">
 <center>
 <form method="post" >
-Agent <input id="in" type="text" name="name" size="4">
-Caller<input id="in" type="text" name="nam" size="8">
-Task<input id="in" type="text" name="task" size="8">
-Category<input id="in" type="text" name="cat" size="8"><br>
-<input id="start" type="datetime-local" name="startdate" size="4">
-<input id="end" type="datetime-local" name="enddate" size="4"><br>
+Owner <input id="in" type="text" name="name" size="4">
+Contact<input id="in" type="text" name="nam" size="8">
+Name<input id="in" type="text" name="task" size="8">
+Stage<input id="in" type="text" name="stage" size="8">
+Priorirty<input id="in" type="text" name="priority" size="8"><br>
+
+<input id="start" type="date" name="startdate" size="4">
+<input id="end" type="date" name="enddate" size="4"><br>
 
 <input id="in" type="submit" name="search" value="Search" size="4" >
 

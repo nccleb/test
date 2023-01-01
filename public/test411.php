@@ -115,7 +115,15 @@ function submit() {
 <form method="post" action="<?php echo htmlspecialchars("test412.php");?>"      >
 <tr><td  valign="top"    >  
 
-<p >Deal name <input class="form-control"  placeholder="Required"    type="text"  name="nu" id="bp" size="32" onclick="test()"><p><br/> 
+<p>Deal name <input class="form-control"  placeholder="Required"    type="text"  name="nu" id="bp" size="32" onclick=""><p><br/>
+
+<p>
+ Deal description
+
+  <textarea   style="  "   class="form-control" id="dd" rows="10"  name="dd"      ></textarea>
+</p><br>
+
+
 <p >Deal stage
 
 <select class="form-control"  required   name="gra">

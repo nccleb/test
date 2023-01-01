@@ -35,7 +35,7 @@ if (mysqli_connect_errno()) {
 	  
 	 while($row=mysqli_fetch_assoc($result)){
 	          
-			  
+		      $category=$row['category'];
 	         
               $num=$row['number'];
 			  
@@ -49,15 +49,15 @@ if (mysqli_connect_errno()) {
               if(strlen($inum)==7){
               $inum="0".$inum;
 			  }			  
-             $name=$row['nom']; 
-			 $lname=$row['prenom'];
+              $name=$row['nom']; 
+			  $lname=$row['prenom'];
 			  $id=$row['id'];
 		      $_SESSION["id"]=$id;
               $company=$row['company'];
 			  $email=$row['email'];
 			  $business=$row['business'];
 			  $grade=$row['grade'];
-			   $pay=$row['payment'];
+			  $pay=$row['payment'];
 			  $loy=$row['card'];
 			  $address=$row['address'];
 			  $address2=$row['address_two'];
@@ -345,6 +345,7 @@ fieldval = document.getElementById("nea").value;
 <p id="form">First name    &nbsp  &nbsp &nbsp <input class="form" type="text" name="na" id="name" value="<?php echo $name?>" size="32" ><p><br/>
 <p id="form">Last name   &nbsp &nbsp  &nbsp &nbsp <input class="form" type="text" name="lna" id="lname" value="<?php echo $lname?>" size="32" ><p><br/>
 <p id="form">Company &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company" value="<?php echo $company?>" size="32" ><p><br/>
+<p id="form">Category &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company" value="<?php echo $category?>" size="32" ><p><br/>
 <p id="form">E-mail &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input class="form" value="<?php echo $email?>" type="text" name="em" id="email" size="32" ><p><br/>
 <p id="form">Url &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <input class="form" type="text" value="<?php echo $url?>" name="ur" id="url" size="32" ><p><br/>
 <p id="form">Business  &nbsp&nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="bu" value="<?php echo $business?>" id="business" size="33" ><p><br/>
@@ -426,7 +427,7 @@ fieldval = document.getElementById("nea").value;
 <input type="hidden" id="driv" value="<?php echo $driv ?>">
 <input type="hidden" id="loyl" value="<?php echo $loy ?>">
 <input type="hidden" id="paye" value="<?php echo $pay ?>">
-
+<input type="hidden" id="category" value="<?php echo $category?>">
 <input type="hidden" id="nd" value="<?php echo $s?>">
 
 

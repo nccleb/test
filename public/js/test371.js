@@ -1,12 +1,15 @@
 
 
+
+
+
   function search110(){
 	
     window.open ("http://localhost:8383//test392.php","","menubar=0,resizable=1,width=650,height=680");
        
    }
      
-
+  
    
    function prev(){
      
@@ -535,15 +538,7 @@ myw=window.open ("http://localhost:8383//test418.php?page=" + encodeURI(glob)+"&
 
 
 
-function search151(){
-  let glob = global;
-  let glob1 = global1;
-  let glob2 = global2;
- 
-myw=window.open ("http://localhost:8383//test413.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
 
-
-}
 
 
 
@@ -1085,6 +1080,27 @@ function Exportd1(){
     }
 
 
+    function deals(){
+	
+ 
+      let glob = global;
+      let glob1 = global1;
+      let glob2 = global2;
+     
+  myw=window.open ("http://localhost:8383//test421.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=900,height=950");	
+  }
+   
+
+  function leads(){
+	
+ 
+    let glob = global;
+    let glob1 = global1;
+    let glob2 = global2;
+   
+myw=window.open ("http://localhost:8383//test423.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=900,height=950");	
+}
+
 
     function incidents2(){
 	
@@ -1121,6 +1137,13 @@ function Exportd1(){
      window.open ("http://localhost:8383//test266.php","","menubar=0,resizable=1,width=1400,height=680");
             
     }
+
+    
+    function list89(){
+            
+      window.open ("http://localhost:8383//test413.php","","menubar=0,resizable=1,width=1400,height=680");
+             
+     }
 
 
     
@@ -1332,6 +1355,17 @@ function del(){
 
 myw=window.open ("http://localhost:8383/test29.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
 }
+
+
+function delDeal(){
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+ myw=window.open ("http://localhost:8383/test419.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+ }
+
+
 
 
 function delPhoto(){

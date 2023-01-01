@@ -74,17 +74,20 @@ function add(){
 <?php
 if(isset($_POST['nam'])&&isset($_POST['sta'])&&isset($_POST['amo'])
 &&isset($_POST['dat'])&&isset($_POST['typ'])
-&&isset($_POST['pri'])
+&&isset($_POST['pri'])&&isset($_POST['dd'])&&isset($_POST['date'])
 ){
  
-    $name=test_input($_POST['nam']);
+  $name=test_input($_POST['nam']);
     $stage=test_input($_POST['sta']);
-   $amount=test_input($_POST['amo']);
+    $amount=test_input($_POST['amo']);
    $date=test_input($_POST['dat']);
   
- 
+   $daat=test_input($_POST['date']);
     $type=test_input($_POST['typ']);
    $priority=test_input($_POST['pri']);
+   $description=test_input($_POST['dd']);
+
+
 	}
 	
 	
@@ -116,8 +119,23 @@ if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$dat
   }
 
 
+  if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$daat)) {
+    echo "<p style=\"color:red\">Invalid  date format!</p>"."<br/>";
+    echo "<button id=\"form\"  type=\"button\" onclick=\"quit()\">Quit</button>";
+    exit();  
+
+  }
+
+
 if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$name)) {
   echo "<p style=\"color:red\">Invalid Name format!</p>"."<br/>";
+  echo "<button id=\"form\"  type=\"button\" onclick=\"quit()\">Quit</button>";
+  exit();  
+}
+
+
+if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$description)) {
+  echo "<p style=\"color:red\">Invalid description format!</p>"."<br/>";
   echo "<button id=\"form\"  type=\"button\" onclick=\"quit()\">Quit</button>";
   exit();  
 }
@@ -174,8 +192,8 @@ if (mysqli_connect_errno()) {
    
 	 
 	
-  $stmt = $idr->prepare("UPDATE deals set name=?,stage=?,amount=?,close_date=?,type=?,priority=?  where idce=? ");
-  $stmt->bind_param("ssssssi", $name,$stage,$amount,$date,$type,$priority,$id);
+  $stmt = $idr->prepare("UPDATE deals set name=?,description=?,contact_date=?,stage=?,amount=?,close_date=?,type=?,priority=?  where idce=? ");
+  $stmt->bind_param("ssssssssi",$name, $description,$daat,$stage,$amount,$date,$type,$priority,$id);
   $stmt->execute();
 
   $test=mysqli_affected_rows($idr)."<br>";

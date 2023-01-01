@@ -130,11 +130,11 @@ if (mysqli_connect_errno()) {
 	  
 	  while($lig=@mysqli_fetch_assoc($result)){
     
-      if( $inc!=0 AND  $inc==$lig['number']) {
+      if( $inc!="" ){
         
        
 
-        }
+        
 
   if( $inc!=0 AND  $inc==$lig['number'] OR $inc==$lig['inumber'] OR $inc==$lig['telmobile'] OR $inc==$lig['telother']  ) {
        if( $lig['address']!=""  ){
@@ -277,7 +277,7 @@ if (mysqli_connect_errno()) {
 	
 }
  
-
+    }
  ?>
  
  

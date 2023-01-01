@@ -230,134 +230,6 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 360), "/");
 <link rel="stylesheet" href="css/stylei2.css">
 
 
-
-
-
- 
-
-
-
- 
- 
- 
- 
- 
- 
-
- 
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
- 
- 
- 
-
- 
- 
-
-
-
-
-
-
-
-
-
-
-		
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <input type="hidden" id="demo" value="<?php echo $nam ?>"></input>
 <input type="hidden" id="demo1" value="<?php echo $idf ?>"></input>
 <input type="hidden" id="demo2" value="<?php echo $inc ?>"></input>
@@ -591,7 +463,7 @@ function sq(str) {
       <li><a href="#" onclick="javascript:uro3()">Search</a></li>  
 		  <li><a href="#" onclick="javascript:search52()">Latest Deal</a></li>
 		  <li><a href="#" onclick="javascript:search51()">Create Deals</a></li>
-		   <li><a href="#" onclick="javascript:search151()">Deals</a></li>
+		  
 		  
 		  </ul>
           
@@ -613,6 +485,7 @@ function sq(str) {
 		  <li><a href="#" onclick="javascript:search16()">Company</a></li>
 		  <li><a href="#" onclick="javascript:search2()">Business</a></li>
 		   <li><a href="#" onclick="javascript:del()">Del</a></li>
+       <li><a href="#" onclick="javascript:delDeal()">DelDeal</a></li>
        <li><a href="#" onclick="javascript:delPhoto()">DelPhoto</a></li>
        
 		  </ul>
@@ -634,7 +507,9 @@ function sq(str) {
 		<ul>
 		  <li><a href="#" onclick="javascript:list1()">Simple List(Address)</a></li>
 		   <li><a href="#" onclick="javascript:list79()">Simple List(Crm)</a></li>
-		  
+       <li><a href="#" onclick="javascript:list89()">Simple List(Deals)</a></li>
+       <li><a href="#" onclick="javascript:leads()">Category</a></li>
+       <li><a href="#" onclick="javascript:deals()">Deals</a></li>
           <li><a href="#" onclick="javascript:incidents()">Complaints</a></li>
           <li><a href="#" onclick="javascript:incidents2()">Statistics(Complaints)</a></li>
 		  
@@ -1233,6 +1108,134 @@ document.close();
 
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
 
 
 

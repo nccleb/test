@@ -82,7 +82,7 @@ if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['gra'])&&!empty($_POS
  
 
     
-&&isset($_POST['tel'])&&isset($_POST['oth']) &&isset($_POST['na'])&&isset($_POST['dt'])&&isset($_POST['pr'])
+&&isset($_POST['tel'])&&isset($_POST['oth']) &&isset($_POST['na'])&&isset($_POST['dt'])&&isset($_POST['pr'])&&isset($_POST['dd'])
 )
 
 {
@@ -98,10 +98,10 @@ if(isset($_POST['nu'])&&!empty($_POST['nu'])&&isset($_POST['gra'])&&!empty($_POS
  
 
    $amount=test_input($_POST['tel']);
-  $date=test_input($_POST['oth']);
+   $date=test_input($_POST['oth']);
    $dt=test_input($_POST['dt']);
    $pr=test_input($_POST['pr']);
-
+   $description=test_input($_POST['dd']);
 
 
 
@@ -184,7 +184,11 @@ if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$stage)) {
 }
 
 
-
+if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$description)) {
+  echo "<p style=\"color:red;font-size:28px\">Invalid Deal stage format!</p>"."<br/>";
+ echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
+ exit();
+}
 
 
 
@@ -266,12 +270,12 @@ if (mysqli_connect_errno()) {
 }
 
 
-    $stmt = $idr->prepare("insert into deals (name,stage,amount,close_date,owner,contact,type,priority,idd) values(?,?,?,?,?,?,?,?,?)");
+    $stmt = $idr->prepare("insert into deals (name,description,stage,amount,close_date,owner,contact,type,priority,idd) values(?,?,?,?,?,?,?,?,?,?)");
   
     if($date==""){
       $date="0001-01-01";
     }
-    $stmt->bind_param("ssssssssi",$name,$stage,$amount,$date,$owner,$contact,$dt,$pr,$id1 );
+    $stmt->bind_param("sssssssssi",$name,$description,$stage,$amount,$date,$owner,$contact,$dt,$pr,$id1 );
 
     $stmt->execute();
 
@@ -302,7 +306,7 @@ if (mysqli_connect_errno()) {
    
    
    $lig=@mysqli_fetch_assoc($result);
-   $cu=$lig['id'];
+   $cu=$lig['idce'];
    
     
  if($cu!=""){ 

@@ -213,7 +213,7 @@ while($row=$result->fetch_assoc()){
 	  
               
               
-			
+			  $category=$row['category'];
         $num=$row['number'];
 			  
 			  $inum=$row['inumber'];

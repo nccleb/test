@@ -110,15 +110,15 @@ ORDER BY d.idce DESC LIMIT 1
 	         $name =$row['name'];
          
           
-       $stage =$row['stage'];
-	    $amount =$row['amount'];
-       $date=$row['close_date']; 
+        $stage =$row['stage'];
+	      $amount =$row['amount'];
+        $date=$row['close_date']; 
         $owner=$row['owner']; 	   
         $contact1  =$row['nom']." ".$row['prenom']; 
 			   $type=$row['type'];
 			   $priority =$row['priority'];
-
-
+         $description =$row['description'];
+         $daat =$row['contact_date'];
         
             
             
@@ -243,7 +243,14 @@ fieldval = document.getElementById("pr").value;
         document.getElementById("pri").value = fieldval;			
 
 
+        fieldval = document.getElementById("ded").value;
+		
+    document.getElementById("dd").value = fieldval;	
 
+
+    fieldval = document.getElementById("daat").value;
+		
+    document.getElementById("date").value = fieldval;	 
 		
 	
 	
@@ -285,7 +292,13 @@ function submit() {
   <input type="text" class="form-control" id="nam" placeholder="" name="nam"    >
 </div><br>
 
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Deal description</label>
+ 
 
+  <textarea   style="  "   class="form-control" id="dd" rows="10"  name="dd"      ></textarea>
+  </div>
+<br>
 
 
 
@@ -298,6 +311,14 @@ function submit() {
   <label for="exampleFormControlInput1" class="form-label">Amount</label>
   <input type="text" class="form-control" id="amo" placeholder="" name="amo"     >
 </div><br>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Contact Date</label>
+  <input type="text" class="form-control" id="date" placeholder="" name="date"     >
+</div>
+
+
 
 <div class="mb-3">
   <label for="exampleFormControlTextarea1" class="form-label">Close Date</label>
@@ -340,7 +361,8 @@ function submit() {
 <input type="hidden" id="co" value="<?php echo $contact1?>">
 <input type="hidden" id="ty" value="<?php echo $type?>">
 <input type="hidden" id="pr" value="<?php echo $priority?>">
-
+<input type="hidden" id="ded" value="<?php echo $description?>">
+<input type="hidden" id="daat" value="<?php echo $daat?>">
 <div id="printDiv">
 
 <input   class="btn btn-success" type="submit" value="Update" id="form">
