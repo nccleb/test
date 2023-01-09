@@ -166,6 +166,13 @@ if (mysqli_connect_errno()) {
         echo " \r\n  "; 
        }
 
+
+       if( $lig['source']!=""  ){
+        echo "Source:".$lig['source']." \r\n   ";
+        echo " \r\n  "; 
+       }
+
+
        if( $lig['company']!=""  ){
         echo "Company:".$lig['company']." \r\n   ";
         echo " \r\n  "; 
@@ -197,6 +204,11 @@ if (mysqli_connect_errno()) {
        }
        if( $lig['card']!=""  ){
         echo "Loyalty card:".$lig['card']." \r\n   ";
+        echo " \r\n  "; 
+       }
+      
+       if( $lig['community']!=""  ){
+        echo "Joined community:".$lig['community']." \r\n   ";
         echo " \r\n  "; 
        }
 

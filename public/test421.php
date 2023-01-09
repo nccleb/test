@@ -105,7 +105,7 @@ if(isset($_POST['search'])&&isset($_POST['name'])){
  $req8=mysqli_query($idr,"select * from deals 
  where owner = '$y'
  and contact = '$z'
- and close_date between \"$startdate\" and\"$enddate\" 
+ and contact_date between \"$startdate\" and\"$enddate\" 
  order by close_date	
 
 ");

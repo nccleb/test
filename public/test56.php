@@ -150,7 +150,7 @@ $('input:radio[name="ca"]').change(
 
 
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Task</label>
+  <label for="exampleFormControlInput1" class="form-label">Issue</label>
   <input type="text" class="form-control"  placeholder=""  value="<?php ?>" name="ta" id="ta"    >
 </div><br>
 

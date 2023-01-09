@@ -169,6 +169,19 @@ function submit() {
 </select>
 <p></br>
 
+<p >Community
+<select class="form-control" name="com">
+
+
+<option></option>
+<option>Yes</option>
+<option>No</option>
+
+</select>
+<p></br>
+
+
+
 <p >Type of payment
 <select class="form-control" name="pay">
 
@@ -202,7 +215,98 @@ function submit() {
 </div></br>
 
 
+<p >Source
+<div class="form-check">
+  <input class="form-check-input" type="radio"  name="blog" value="Blog posts" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  Blog posts
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Landing pages" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+  Landing pages
+  </label>
+</div>
 
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Organic search traffic" id="flexRadioDefault3">
+  <label class="form-check-label" for="flexRadioDefault3">
+  Organic search traffic
+  </label>
+</div>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="radio"  name="blog" value="Direct traffic" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  Direct traffic
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="PPC ads" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+  PPC ads
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Affiliate marketers" id="flexRadioDefault3">
+  <label class="form-check-label" for="flexRadioDefault3">
+  Affiliate marketers
+  </label>
+</div>
+
+
+
+<div class="form-check">
+  <input class="form-check-input" type="radio"  name="blog" value="Social media channels" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  Social media channels
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Paid social ads" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+  Paid social ads
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Voice assistants" id="flexRadioDefault3">
+  <label class="form-check-label" for="flexRadioDefault3">
+  Voice assistants
+  </label>
+</div>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="radio"  name="blog" value="Direct marketing" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+  Direct marketing
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Traditional marketing channels" id="flexRadioDefault2" >
+  <label class="form-check-label" for="flexRadioDefault2">
+  Traditional marketing channels
+  </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Tradeshows" id="flexRadioDefault3">
+  <label class="form-check-label" for="flexRadioDefault3">
+  Tradeshows
+  </label>
+</div>
+
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="blog" value="Referrals" id="flexRadioDefault3">
+  <label class="form-check-label" for="flexRadioDefault3">
+  Referrals
+  </label>
+</div>
 
 </td>
 <td  valign="top"   style="align:left"    >

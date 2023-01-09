@@ -214,6 +214,7 @@ while($row=$result->fetch_assoc()){
               
               
 			  $category=$row['category'];
+        $source=$row['source'];
         $num=$row['number'];
 			  
 			  $inum=$row['inumber'];
@@ -233,6 +234,7 @@ while($row=$result->fetch_assoc()){
 			  $grade=$row['grade'];
         $pay=$row['payment'];
         $loy=$row['card'];
+        $community=$row['community'];
 			  $address=$row['address'];
 			  $address2=$row['address_two'];
 			  $url=$row['url'];
@@ -447,7 +449,11 @@ for ($i=1;$i<=$lig12["co"];$i++){
 </div><br>
 
 
-
+<!--p id="form">Company &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company"  size="32" ><p><br/-->
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Source</label>
+  <input type="text" class="form-control" id="src" placeholder="" name="src"     >
+</div><br>
 
 <!--p id="form">Company &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company"  size="32" ><p><br/-->
 <div class="mb-3">
@@ -507,7 +513,11 @@ for ($i=1;$i<=$lig12["co"];$i++){
   <input type="text" class="form-control" id="loy" placeholder="" name="loy"     >
 </div><br>
 
-
+<!--p id="form">Loyalty card   &nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="loy"  id="loy" size="33" ><p><br/-->
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Community</label>
+  <input type="text" class="form-control" id="com" placeholder="" name="com"     >
+</div><br>
 
 <!--p id="form">Salesman  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="driver"  id="driver" size="33" ><p><br/-->
 <div class="mb-3">
@@ -712,6 +722,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <input type="hidden" id="photo" value="<?php echo $pho?>">
 <input type="hidden" id="lnam" value="<?php echo $lname?>">
 <input type="hidden" id="category" value="<?php echo $category?>">
+<input type="hidden" id="source" value="<?php echo $source?>">
 <input type="hidden" id="com" value="<?php echo $company?>">
 <input type="hidden" id="jo" value="<?php echo $job?>">
 <input type="hidden" id="num" value="<?php echo $num?>">
@@ -737,6 +748,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <input type="hidden" id="driv" value="<?php echo $driv ?>">
 <input type="hidden" id="paye" value="<?php echo $pay ?>">
 <input type="hidden" id="loyl" value="<?php echo $loy ?>">
+<input type="hidden" id="comm" value="<?php echo $community ?>">
 <input type="hidden" id="nd" value="<?php echo $s?>">
 
 

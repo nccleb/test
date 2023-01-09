@@ -505,13 +505,18 @@ function sq(str) {
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
 		<ul>
+   
 		  <li><a href="#" onclick="javascript:list1()">Simple List(Address)</a></li>
 		   <li><a href="#" onclick="javascript:list79()">Simple List(Crm)</a></li>
        <li><a href="#" onclick="javascript:list89()">Simple List(Deals)</a></li>
+       <li><a href="#" onclick="javascript:community()">Simple List(community)</a></li>
        <li><a href="#" onclick="javascript:leads()">Category</a></li>
        <li><a href="#" onclick="javascript:deals()">Deals</a></li>
-          <li><a href="#" onclick="javascript:incidents()">Complaints</a></li>
-          <li><a href="#" onclick="javascript:incidents2()">Statistics(Complaints)</a></li>
+          
+       <li><a href="#" onclick="javascript:incidents()">Complaints</a></li>
+       <li><a href="#" onclick="javascript:incidents2()">Statistics(Complaints)</a></li>   
+      
+       
 		  
 		 </ul>
 		  
@@ -815,7 +820,7 @@ if (mysqli_connect_errno()) {
 
 
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">ADDRESS</label>
+ 
 
   <textarea   style="  background-color: lightblue;"   class="form-control" id="cp" rows="38"  name="cp"      ></textarea>
 </div>
@@ -838,15 +843,15 @@ if (mysqli_connect_errno()) {
 <div >
 
            
-            <p >MORE
+           
               <ul class="list-group">
-			    <li class="list-group-item "><a href="#" onclick="javascript:number23()">Edit</a></li>
+			    <li class="list-group-item "><a href="#" onclick="javascript:number23()">Edit client</a></li>
                 <li class="list-group-item "><a href="#" onclick="javascript:add110()">Add</a></li>
                 
 				<li class="list-group-item "><a href="#" onclick="javascript:number22()">Search </a></li>
 				    </br>          
 								
-				 <li class="list-group-item "><a href="#" onclick="javascript:uro1()">Comp</a></li>
+				 <li class="list-group-item "><a href="#" onclick="javascript:uro1()">Edit complaint</a></li>
 				   <li class="list-group-item "><a href="#" onclick="javascript:add()">Add</a></li>
                 <li class="list-group-item "><a href="#" onclick="javascript:uro2()">Search</a></li>
 				

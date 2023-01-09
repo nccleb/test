@@ -206,7 +206,7 @@ function submit() {
 
 <!--p id="form">Task    &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp <input class="form" type="text" value="<?php echo $task ?>" name="task" id="task" size="32" onclick="test()"><p><br/--> 
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Task</label>
+  <label for="exampleFormControlInput1" class="form-label">Issue</label>
   <input type="text" class="form-control"  value="<?php echo $task ?> "  id="text" placeholder="" name="text"     >
 </div><br>
 

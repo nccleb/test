@@ -644,6 +644,14 @@ function size242(){
 
 function test200(){
 
+
+           fieldval = document.getElementById("comm").value;
+		
+           document.getElementById("com").value = fieldval;
+
+
+
+
            fieldval = document.getElementById("jo").value;
 		
            document.getElementById("job").value = fieldval;
@@ -652,6 +660,11 @@ function test200(){
            fieldval = document.getElementById("category").value;
 		
            document.getElementById("cat").value = fieldval;
+
+
+           fieldval = document.getElementById("source").value;
+		
+           document.getElementById("src").value = fieldval;
 
 
 
@@ -1102,6 +1115,19 @@ myw=window.open ("http://localhost:8383//test423.php?page=" + encodeURI(glob)+"&
 }
 
 
+function community(){
+	
+ 
+  let glob = global;
+  let glob1 = global1;
+  let glob2 = global2;
+ 
+myw=window.open ("http://localhost:8383//test424.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=900,height=950");	
+}
+
+
+
+
     function incidents2(){
 	
  
@@ -1242,7 +1268,7 @@ function number23() {
         let glob1 = global1;
         let glob2 = global2;
        
-    myw=window.open ("http://localhost:8383/test19.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+    myw=window.open ("http://localhost:8383/test19.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=900,height=950");	
     }
     
 

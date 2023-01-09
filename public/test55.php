@@ -323,7 +323,7 @@ if(isset($_POST['nu'])&&isset($_POST['na'])&&isset($_POST['lna'])&&isset($_POST[
  &&isset($_POST['inu'])&&isset($_POST['tel'])&&isset($_POST['oth'])&&isset($_POST['ur'])&&isset($_POST['bu'])    &&isset($_POST['ad'])&&isset($_POST['ad2'])&&isset($_POST['em'])
 &&isset($_POST['cit'])&&isset($_POST['str'])&&isset($_POST['flo'])
  &&isset($_POST['bui'])&&isset($_POST['zon'])&&isset($_POST['nea'])    &&isset($_POST['rem']) &&isset($_POST['apa'])&&isset($_POST['grad'])&&isset($_POST['driver'])&&isset($_POST['pay'])
- &&isset($_POST['loy'])&&isset($_POST['disa'])&&isset($_POST['disa2'])&&isset($_POST['disa2'])&&isset($_POST['pho'])&&isset($_POST['job'])&&isset($_POST['cat'])
+ &&isset($_POST['loy'])&&isset($_POST['disa'])&&isset($_POST['disa2'])&&isset($_POST['disa2'])&&isset($_POST['pho'])&&isset($_POST['job'])&&isset($_POST['cat'])&&isset($_POST['src'])&&isset($_POST['com'])
 
 
  )
@@ -341,6 +341,7 @@ if(isset($_POST['nu'])&&isset($_POST['na'])&&isset($_POST['lna'])&&isset($_POST[
  $ad2=test_input($_POST['ad2']);
   $bu=test_input($_POST['bu']);
   $cat=test_input($_POST['cat']);
+  $src=test_input($_POST['src']);
    $co=test_input($_POST['co']);
    $jo=test_input($_POST['job']);
   $ci=test_input($_POST['cit']);
@@ -356,6 +357,7 @@ if(isset($_POST['nu'])&&isset($_POST['na'])&&isset($_POST['lna'])&&isset($_POST[
   $gra=test_input($_POST['grad']);
   $pay=test_input($_POST['pay']);
   $loy=test_input($_POST['loy']);
+  $com=test_input($_POST['com']);
   $driv=test_input($_POST['driver']);
    $disa=test_input($_POST['disa']);
    $disa2=test_input($_POST['disa2']);
@@ -434,6 +436,11 @@ if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$cat
   exit();  
 }
 
+if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$src)) {
+  echo "<p style=\"color:red\">Invalid Source format!</p>"."<br/>";
+  echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
+  exit();  
+}
 
 
 if (!preg_match("/^[0-9a-zA-Z'?!=;~+%`\[\]()$*\"|:.,#&_\s-\p{Arabic} ]*$/u",$co)) {
@@ -563,6 +570,16 @@ if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$loy)) {
   echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
   exit();  
 }	
+
+
+
+if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$com)) {
+  echo "<p style=\"color:red\">Invalid Community </p>"."<br/>";
+  echo "<button type=\"button\" onclick=\"quit()\">Quit</button>";
+  exit();  
+}	
+
+
 
 if (!preg_match("/^[0-9a-zA-Z.,\s\p{Arabic} ]*$/u",$driv)) {
   echo "<p style=\"color:red\">Invalid Tel</p>"."<br/>";
@@ -790,8 +807,8 @@ setcookie($cookie_name, $cookie_value, time() + (86400 * 3600), "/");
 
      $stmt->close();
 	
-     $stmt = $idr->prepare("update client set nom=?,prenom=?,filename=?,category=?, company=?,job=?, number=?,inumber=?,email=?,business=?,grade=?,payment=?,card=?,telmobile=?,telother=?,url=?,idf=?,idx=? where id=?");
-	 $stmt->bind_param("sssssssssssssssssss", $na,$lna,$filename,$cat,$co,$jo,$nu,$inu,$em,$bu,$gra,$pay,$loy,$tel,$oth,$ur,$idf,$idx,$id);
+     $stmt = $idr->prepare("update client set nom=?,prenom=?,filename=?,category=?,source=?, company=?,job=?, number=?,inumber=?,email=?,business=?,grade=?,payment=?,card=?,community=?,telmobile=?,telother=?,url=?,idf=?,idx=? where id=?");
+	 $stmt->bind_param("sssssssssssssssssssss", $na,$lna,$filename,$cat,$src,$co,$jo,$nu,$inu,$em,$bu,$gra,$pay,$loy,$com,$tel,$oth,$ur,$idf,$idx,$id);
 	 $stmt->execute();
 	  $test=mysqli_affected_rows($idr);
 	 $stmt->close();

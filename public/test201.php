@@ -36,7 +36,7 @@ if (mysqli_connect_errno()) {
 	 while($row=mysqli_fetch_assoc($result)){
 	          
 		      $category=$row['category'];
-	         
+	          $source=$row['source'];
               $num=$row['number'];
 			  
               //if(strlen($num)==7){
@@ -323,7 +323,7 @@ fieldval = document.getElementById("nea").value;
 </head>
 
 <body onload="test()+size()">
-<div class="container text-center"> 
+<div class="jumbotron"> 
 
 
 
@@ -338,34 +338,35 @@ fieldval = document.getElementById("nea").value;
 <form >
 <tr><td  valign="top"   style="align:left"  >  
 
-<p id="form">Tel &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp <input class="form" type="text" value="<?php echo $num?>" name="nu" id="bp" size="32" onclick="test()"><p><br/> 
- <p id="form">Tel(Office)  &nbsp &nbsp &nbsp &nbsp <input class="form" type="text" name="inu" value="<?php echo $inum?>" id="ibp" size="32"><p><br/>
- <p id="form">Tel(Mobile)  &nbsp &nbsp &nbsp <input class="form" type="text" name="tel" value="<?php echo $telmobile?>" id="tel" size="32" onclick="test()"><p><br/> 
- <p id="form">Tel(Other)  &nbsp &nbsp &nbsp <input class="form" type="text" name="oth" value="<?php echo $telother?>" id="oth" size="32"><p><br/>    
-<p id="form">First name    &nbsp  &nbsp &nbsp <input class="form" type="text" name="na" id="name" value="<?php echo $name?>" size="32" ><p><br/>
-<p id="form">Last name   &nbsp &nbsp  &nbsp &nbsp <input class="form" type="text" name="lna" id="lname" value="<?php echo $lname?>" size="32" ><p><br/>
-<p id="form">Company &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company" value="<?php echo $company?>" size="32" ><p><br/>
-<p id="form">Category &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company" value="<?php echo $category?>" size="32" ><p><br/>
-<p id="form">E-mail &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input class="form" value="<?php echo $email?>" type="text" name="em" id="email" size="32" ><p><br/>
-<p id="form">Url &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   <input class="form" type="text" value="<?php echo $url?>" name="ur" id="url" size="32" ><p><br/>
-<p id="form">Business  &nbsp&nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="bu" value="<?php echo $business?>" id="business" size="33" ><p><br/>
-<p id="form">Grade  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="grad"  id="grad" size="33" ><p><br/>
-<p id="form">Payment  &nbsp &nbsp &nbsp &nbsp &nbsp <input class="form" type="text" name="pay"  id="pay" size="33" ><p><br/>
-<p id="form">Loyalty card     &nbsp &nbsp &nbsp <input class="form" type="text" name="loy"  id="loy" size="33" ><p><br/>
-<p id="form">Salesman     &nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="driver"  id="driver" size="33" ><p><br/>
+<p >Tel      <input  class="form-control"   type="text" value="<?php echo $num?>" name="nu" id="bp" size="32" onclick="test()"><p><br/> 
+ <p >Tel(Office)      <input  class="form-control"       type="text" name="inu" value="<?php echo $inum?>" id="ibp" size="32"><p><br/>
+ <p >Tel(Mobile)     <input class="form-control" type="text" name="tel" value="<?php echo $telmobile?>" id="tel" size="32" onclick="test()"><p><br/> 
+ <p >Tel(Other)     <input class="form-control" type="text" name="oth" value="<?php echo $telother?>" id="oth" size="32"><p><br/>    
+<p >First name        <input class="form-control" type="text" name="na" id="name" value="<?php echo $name?>" size="32" ><p><br/>
+<p >Last name        <input class="form-control" type="text" name="lna" id="lname" value="<?php echo $lname?>" size="32" ><p><br/>
+<p >Company       <input class="form-control"  type="text" name="co" id="company" value="<?php echo $company?>" size="32" ><p><br/>
+<p >Category       <input class="form-control"  type="text" name="co" id="company" value="<?php echo $category?>" size="32" ><p><br/>
+<p >Source       <input class="form-control"  type="text" name="co" id="source" value="<?php echo $source?>" size="32" ><p><br/>
+<p >E-mail       <input class="form-control" value="<?php echo $email?>" type="text" name="em" id="email" size="32" ><p><br/>
+<p >Url            <input class="form-control" type="text" value="<?php echo $url?>" name="ur" id="url" size="32" ><p><br/>
+<p >Business       <input class="form-control" type="text" name="bu" value="<?php echo $business?>" id="business" size="33" ><p><br/>
+<p >Grade          <input class="form-control" type="text" name="grad"  id="grad" size="33" ><p><br/>
+<p >Payment       <input class="form-control" type="text" name="pay"  id="pay" size="33" ><p><br/>
+<p >Loyalty card        <input class="form-control" type="text" name="loy"  id="loy" size="33" ><p><br/>
+<p >Salesman          <input class="form-control" type="text" name="driver"  id="driver" size="33" ><p><br/>
 
-<p id="form">Cuid &nbsp&nbsp &nbsp&nbsp &nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="bu" value="<?php echo $id?>" id="business" size="33" ><p><br/>
-<p id="form">Account  &nbsp&nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="bu" value="<?php echo $op?>" id="business" size="33" ><p><br/>
-<p id="form">Idf &nbsp &nbsp &nbsp &nbsp  &nbsp&nbsp &nbsp &nbsp  &nbsp <input class="form" type="text" name="bu" value="<?php echo $idf?>" id="business" size="33" ><p><br/>
+<p >Cuid        <input class="form-control" type="text" name="bu" value="<?php echo $id?>" id="business" size="33" ><p><br/>
+<p >Account       <input class="form-control" type="text" name="bu" value="<?php echo $op?>" id="business" size="33" ><p><br/>
+<p >Idf           <input class="form-control" type="text" name="bu" value="<?php echo $idf?>" id="business" size="33" ><p><br/>
 </td>
 <td  valign="top"   style="align:left"    >
-<p id="form">City &nbsp &nbsp &nbsp <input class="form" type="text" name="cit"value="<?php echo $city?>"  id="city" size="33" ><p><br>
-<p id="form">Zone &nbsp &nbsp  <input class="form" value="<?php echo $zone?>" type="text" name="zon" id="zone" size="33" ><p><br/>
-<p id="form">Street &nbsp &nbsp <input class="form" type="text" name="str" value="<?php echo $street?>" id="street" size="32" ><p><br/>
-<p id="form">Building  <input class="form" type="text" value="<?php echo $building?>" name="bui" id="building" size="32" ><p><br/>
-<p id="form">Apartment  <input class="form" type="text" name="apa" value="<?php echo $apartment?>" id="apa" size="32" ><p><br/>
-<p id="form">Floor&nbsp &nbsp &nbsp 
-<select class="form"  name="flo"  id="floor">
+<p >City    <input class="form-control" type="text" name="cit"value="<?php echo $city?>"  id="city" size="33" ><p><br>
+<p >Zone    <input class="form-control" value="<?php echo $zone?>" type="text" name="zon" id="zone" size="33" ><p><br/>
+<p >Street   <input class="form-control" type="text" name="str" value="<?php echo $street?>" id="street" size="32" ><p><br/>
+<p >Building  <input class="form-control" type="text" value="<?php echo $building?>" name="bui" id="building" size="32" ><p><br/>
+<p >Apartment  <input class="form-control" type="text" name="apa" value="<?php echo $apartment?>" id="apa" size="32" ><p><br/>
+<p >Floor   
+<select class="form-control"  name="flo"  id="floor">
 
 
 
@@ -395,11 +396,11 @@ fieldval = document.getElementById("nea").value;
 <p>
 
 
-<p id="form">Near &nbsp &nbsp &nbsp  <input   class="form" type="text" value="<?php echo $near?>" name="nea" id="nea" size="32" ></p><br/>
+<p >Near     <input   class="form-control" type="text" value="<?php echo $near?>" name="nea" id="nea" size="32" ></p><br/>
 
-<p  id="form">Address  <textarea  class="form" name="ad" id="address"  rows="5" cols="34" ></textarea><br>
-<p  id="form">Address  <textarea  class="form" name="ad2" id="address2"  rows="5" cols="34" ></textarea><br>
-<p id="form">Request &nbsp <textarea  class="form" name="rem"  id="remark"  rows="5" cols="34" ></textarea></p><br/><br/><br/>
+<p  >Address  <textarea  class="form-control" name="ad" id="address"  rows="5" cols="34" ></textarea><br>
+<p  >Address  <textarea  class="form-control" name="ad2" id="address2"  rows="5" cols="34" ></textarea><br>
+<p >Request  <textarea  class="form-control" name="rem"  id="remark"  rows="5" cols="34" ></textarea></p><br/><br/><br/>
 
 <input type="hidden" id="nam" value="<?php echo $name?>">
 <input type="hidden" id="lnam" value="<?php echo $lname?>">
@@ -428,6 +429,7 @@ fieldval = document.getElementById("nea").value;
 <input type="hidden" id="loyl" value="<?php echo $loy ?>">
 <input type="hidden" id="paye" value="<?php echo $pay ?>">
 <input type="hidden" id="category" value="<?php echo $category?>">
+<input type="hidden" id="src" value="<?php echo $source?>">
 <input type="hidden" id="nd" value="<?php echo $s?>">
 
 
@@ -444,7 +446,7 @@ fieldval = document.getElementById("nea").value;
    
    
    
-   <button  class="whatsappbutton" type="button" id="form" onclick="quit()">Quit</button>
+   <button  class="whatsappbutton" type="button"  onclick="quit()">Quit</button>
    </form>
    </td>
   <td>

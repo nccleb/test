@@ -34,7 +34,7 @@ session_start();
 
 <div class="container text-center"> 
 <table class="table">
-<tr><th>Id</th><th>Name</th><th>Number</th><th>Task</th> 
+<tr><th>Id</th><th>Name</th><th>Number</th><th>Issue</th> 
    <th>Last Contacted Date</th><th>Last Activity</th><th>Comment</th> <th>Status</th><th>Agent</th></tr>
 <?php 
 	 

@@ -465,7 +465,7 @@ if (result) {
     <th>Name</th>
   
 	
-	<th> Task</th>
+	<th> Issue</th>
 	<th> Activity</th>
 	
 	 <th>Comments</th>

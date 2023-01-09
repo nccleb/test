@@ -308,15 +308,13 @@ for ($i=1;$i<=$lig12["co"];$i++){
 
 
 
-
 <!--h1><p style="color:red"></p></h1>
 
 <fieldset style="background:#f2f2f2;"-->
    
  
-<form method="post"   onsubmit="touch() "   action="<?php echo htmlspecialchars("test391.php");?>"   enctype="multipart/form-data"    >
-<table style="width:100%   ";  >
-
+<form method="post"   onsubmit="touch() "   action="<?php echo htmlspecialchars("test55.php");?>"   enctype="multipart/form-data"  >
+<table>
 
 <tr><td  valign="top"   style="align: left"  >  
 
@@ -359,23 +357,63 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label">Last name</label>
   <input type="text" class="form-control" id="lname" placeholder="" name="lna"     >
-  </div><br>
-
-
-
-  <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Photo</label>
-  <input type="text" class="form-control" id="pho" placeholder="" name="pho"  readonly   >
 </div><br>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Photo</label>
+  <input type="text" class="form-control" id="pho"   value="<?php echo $_COOKIE["pho"]; ?>"   placeholder="" name="pho"     >
+</div><br>
+
+<div class="mb-3">
+  
+    <?php
+
+
+  
+
+                   
+	 $idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
+   if (mysqli_connect_errno()) {
+     echo "Failed to connect to MySQL: " . mysqli_connect_error();
+     exit();
+   }
+
+              
+       
+                  $stmt = $idr->prepare("select * from client 
+                  where number = ?") ; 
+                  $stmt->bind_param("i",$number );
+        
+                  $stmt->execute();
+
+                  $result = $stmt ->get_result();
+                  
+                  $stmt->close();
+ 
+                  while($row=$result->fetch_assoc()){
+         echo" <img src=\"./image/$row[filename]\" onerror=\"this.onerror=null; this.src='./image/default.jpg'\"  class = \"img-circle\"  alt=\"No image\">";
+    
+        }
+    ?>
+   
+   </div><br>
+
+
 
 <div class="mb-3">
        
             <div class="form-group">
                 <input class="form-control" type="file" name="uploadfile" value="" />
             </div>
-            
-
-
+  <div>   
+    
+  
+<!--p id="form">Company &nbsp &nbsp &nbsp &nbsp   <input class="form"  type="text" name="co" id="company"  size="32" ><p><br/-->
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Category</label>
+  <input type="text" class="form-control" id="cat" placeholder="" name="cat"     >
+</div><br>
 
 
 
@@ -385,6 +423,13 @@ for ($i=1;$i<=$lig12["co"];$i++){
   <label for="exampleFormControlInput1" class="form-label">Company</label>
   <input type="text" class="form-control" id="company" placeholder="" name="co"     >
 </div><br>
+
+
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Job Title</label>
+  <input type="text" class="form-control" id="job" placeholder="" name="job"     >
+</div><br>
+
 
 <!--p id="form">E-mail &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <input class="form"  type="text" name="em" id="email" size="32" ><p><br/-->
 <div class="mb-3">
@@ -467,7 +512,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 
 
 </td>
-<td  valign="top"   style="align:"left"    >
+<td  valign="top"   style="align:left"    >
 <!--p id="form">City &nbsp &nbsp &nbsp <input class="form" type="text" name="cit" id="city" size="33" ><p><br-->
 <div class="mb-3">
   <label for="exampleFormControlInput1" class="form-label"> City</label>
@@ -546,6 +591,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <select class="form-control"  name="flo"  id="">
 
 <option selected><?php echo $floor?></option>
+<option>0</option>
 <option>1</option>
 <option>2</option>
 <option>3</option>
@@ -632,9 +678,11 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <input type="hidden" id="disa" name="disa1" >
 <input type="hidden" id="disa" name="disa2" >
 <input type="hidden" id="nam" value="<?php echo $name?>">
-<input type="hidden" id="lnam" value="<?php echo $lname?>">
 <input type="hidden" id="photo" value="<?php echo $pho?>">
+<input type="hidden" id="lnam" value="<?php echo $lname?>">
+<input type="hidden" id="category" value="<?php echo $category?>">
 <input type="hidden" id="com" value="<?php echo $company?>">
+<input type="hidden" id="jo" value="<?php echo $job?>">
 <input type="hidden" id="num" value="<?php echo $num?>">
 <input type="hidden" id="inu" value="<?php echo $inum?>">
 <input type="hidden" id="em" value="<?php echo $email?>">
@@ -697,7 +745,8 @@ for ($i=1;$i<=$lig12["co"];$i++){
 
    
    
-<input   class=" whatsappbutton "   name="upload"      type="submit" value="Update" id="form">
+   
+   <input   class=" whatsappbutton "   name="upload"      type="submit" value="Update" id="form">
    <button type="button" id="form" class="whatsappbutton" onclick="printContents(id)">Print</button>
   
    
