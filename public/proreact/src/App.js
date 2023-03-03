@@ -17,11 +17,14 @@ function App() {
 
     
   return ( 
+	
 	<MovieProvider> 
     <Router>
 	<div className="App">
+		
 	<Nav />
 	<Switch>
+	
 	<Route path="/" exact component={Home} />
 	<Route path="/AddMovie" exact component={AddMovie} />
 	<Route path="/MovieList" exact component={MovieList} />

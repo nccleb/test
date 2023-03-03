@@ -25,7 +25,7 @@ function Nav(){
 
 	return(
 	<nav>
-	<h3>NCC</h3>
+	<h3>NBC</h3>
 	
 	<ul className="nav-links">
 

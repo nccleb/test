@@ -178,6 +178,7 @@ function add(){
 <body onload="size()">
 
 <?php
+/*
 error_reporting(0);
  
 $msg = "";
@@ -219,19 +220,61 @@ if (isset($_POST['upload'])) {
     }
   }}
 
-
+*/
  
-    // Now let's move the uploaded image into the folder: image
-
-
-   // if (move_uploaded_file($tempname, $folder)) {
-       // echo "<h3>  Image uploaded successfully!</h3>";
-    //} else {
-       // echo "<h3>  Failed to upload image!</h3>";
-   // }
-//}
 ?>
+<?php
+error_reporting(0);
+$target_dir = "image/";
+$target_file = $target_dir = "image/".basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+// Check if image file is a actual image or fake image
+if(isset($_POST["submit"])) {
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if($check !== false) {
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    echo "File is not an image.";
+    $uploadOk = 0;
+  }
+}
+
+// Check if file already exists
+if (file_exists($target_file)) {
+  echo "Sorry, file already exists.";
+  $uploadOk = 0;
+}
+
+// Check file size
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+  echo "Sorry, your file is too large.";
+  $uploadOk = 0;
+}
+
+// Allow certain file formats
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+  $uploadOk = 0;
+}
+
+// Check if $uploadOk is set to 0 by an error
+if ($uploadOk == 0) {
+  echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+} else {
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+  } else {
+    echo "Sorry, there was an error uploading your file.";
+  }
+}
+
+$filename = htmlspecialchars( basename( $_FILES["fileToUpload"]["name"]));
+?>
 
  <?php
  /*
@@ -366,7 +409,7 @@ if(isset($_POST['nu'])&&isset($_POST['na'])&&isset($_POST['lna'])&&isset($_POST[
 	}
 else{
 	
-	echo"<script>alert('Missing Entry!')</script>";
+	echo"<script>alert('Missing Entry1!')</script>";
 	echo"<script>location.replace('numbersearch.php')</script>";
     }
 	function test_input($data) {
@@ -782,22 +825,11 @@ if($t!=1){
 
 //echo "filename=".$filename;
 
-if($size==0 && $photo!=""){
 
-$filename=$photo;
-
-$cookie_name = "pho";
-$cookie_value = $photo;
-setcookie($cookie_name, $cookie_value, time() + (86400 * 3600), "/"); 
-  
-
-
-
-}
 
  
    
-//echo $id;
+
 	$stmt = $idr->prepare("select *  from address WHERE id=? ");
    
    $stmt->bind_param("i",$id );
@@ -875,7 +907,18 @@ location.replace (\"http://localhost:8383//test275.php?page=$naa&page1=$idf&page
  mysqli_close($idr); 
  
 
+ if($size==0 && $photo!=""){
 
+  $filename=$photo;
+  
+  $cookie_name = "pho";
+  $cookie_value = $photo;
+  setcookie($cookie_name, $cookie_value, time() + (86400 * 3600), "/"); 
+    
+  
+  
+  
+  }
 
 
 ?>

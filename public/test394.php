@@ -93,7 +93,7 @@ $result = $stmt ->get_result();
 $stmt->close();
 
 
-unlink("/wamp64/www/image/$nui");
+unlink("/wamp64/www/testapp/public/image/$nui");
 
 if($test == 0  ){
 	  

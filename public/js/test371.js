@@ -1091,6 +1091,18 @@ function Exportd1(){
        
     myw=window.open ("http://localhost:8383//test264.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
     }
+   
+  
+    function exchange(){
+	
+ 
+      let glob = global;
+      let glob1 = global1;
+      let glob2 = global2;
+     
+  myw=window.open ("http://localhost:8383//test425.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+  }
+
 
 
     function deals(){
@@ -1309,6 +1321,19 @@ function add22(){
      
   myw=window.open ("http://localhost:8383/test377.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
   }
+
+
+  function add3220(){
+
+	
+    let glob = global;
+    let glob1 = global1;
+    let glob2 = global2;
+   
+myw=window.open ("http://localhost:8383/test426.php?page=" + encodeURI(glob)+"&page1="+ encodeURI(glob1) +"&page2="+ encodeURI(glob2) ,"","menubar=0,resizable=1,width=600,height=950");	
+}
+
+
     
 function add3(){
    let glob = global;

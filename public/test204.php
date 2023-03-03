@@ -454,7 +454,7 @@ function sq(str) {
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
 
-
+      <!--li><a href="#" onclick="javascript:exchange()">Exchange</a></li--> 
       <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sales
         <span class="caret"></span></a>
@@ -479,16 +479,16 @@ function sq(str) {
         <ul class="dropdown-menu">
 		  <ul>
          
-		 
-		  <li><a href="#" onclick="javascript:search5()">First name</a></li>
-		   <li><a href="#" onclick="javascript:search15()">Last name</a></li>
-		  <li><a href="#" onclick="javascript:search16()">Company</a></li>
-		  <li><a href="#" onclick="javascript:search2()">Business</a></li>
-		   <li><a href="#" onclick="javascript:del()">Del</a></li>
-       <li><a href="#" onclick="javascript:delDeal()">DelDeal</a></li>
-       <li><a href="#" onclick="javascript:delPhoto()">DelPhoto</a></li>
-       
-		  </ul>
+        
+            <li><a href="#" onclick="javascript:search5()">First name</a></li>
+            <li><a href="#" onclick="javascript:search15()">Last name</a></li>
+            <li><a href="#" onclick="javascript:search16()">Company</a></li>
+            <li><a href="#" onclick="javascript:search2()">Business</a></li>
+            <li><a href="#" onclick="javascript:del()">Del</a></li>
+            <li><a href="#" onclick="javascript:delDeal()">DelDeal</a></li>
+            <li><a href="#" onclick="javascript:delPhoto()">DelPhoto</a></li>
+        
+        </ul>
           
         </ul>
       </li>
@@ -505,14 +505,14 @@ function sq(str) {
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
 		<ul>
-   
-		  <li><a href="#" onclick="javascript:list1()">Simple List(Address)</a></li>
-		   <li><a href="#" onclick="javascript:list79()">Simple List(Crm)</a></li>
-       <li><a href="#" onclick="javascript:list89()">Simple List(Deals)</a></li>
-       <li><a href="#" onclick="javascript:community()">Simple List(community)</a></li>
-       <li><a href="#" onclick="javascript:leads()">Category</a></li>
-       <li><a href="#" onclick="javascript:deals()">Deals</a></li>
-          
+    
+                <li><a href="#" onclick="javascript:list1()">Simple List(Address)</a></li>
+                <li><a href="#" onclick="javascript:list79()">Simple List(Crm)</a></li>
+                <li><a href="#" onclick="javascript:list89()">Simple List(Deals)</a></li>
+                <li><a href="#" onclick="javascript:community()">Simple List(community)</a></li>
+                <li><a href="#" onclick="javascript:leads()">Category</a></li>
+                <li><a href="#" onclick="javascript:deals()">Deals</a></li>
+            
        <li><a href="#" onclick="javascript:incidents()">Complaints</a></li>
        <li><a href="#" onclick="javascript:incidents2()">Statistics(Complaints)</a></li>   
       
@@ -533,6 +533,22 @@ function sq(str) {
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">System
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
+
+
+        <li><a href="#">Currency</a></li>
+		      <ul >
+			 <li><a href="#" onclick="javascript:add3220()">Currency</a></li>  
+          <li><a href="#" onclick="javascript:add33()">Add_complaint</a></li>
+		  
+		  <li><a href="#" onclick="javascript:del_ag1()">Del-complaint</a></li>
+		  <li><a href="#" onclick="javascript:del_al1()">Del-ALL</a></li>
+		 
+		 
+		      </ul>    
+
+
+
+
          
         <li><a href="#">Complaints</a></li>
 		      <ul >
@@ -589,7 +605,8 @@ function sq(str) {
 	  
 	   
 	  
-    
+      
+     
      <li class="nav navbar-nav navbar-right"   ><a href="/posts" >Blog</a></li>
 	  
 	  
@@ -979,7 +996,7 @@ document.close();
 
  
  else if($mapo=="") { 
-*/
+
 
   echo "
 

@@ -120,11 +120,12 @@ function submit() {
 <div id="content"><p>Photo</p>
        
             <div class="form-group">
-                <input class="form-control" type="file" name="uploadfile" value="" />
+                <input class="form-control" type="file" name="fileToUpload" value="" />
             </div>
             
         
     </div>
+
     <div id="display-image">
     <?php
         $query = " select * from client ";
@@ -201,7 +202,7 @@ function submit() {
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="cat" value="Ignore Call" id="flexRadioDefault2" >
+  <input class="form-check-input"  type="radio" name="cat" value="Ignore Call" id="flexRadioDefault2" >
   <label class="form-check-label" for="flexRadioDefault2">
    Ignore Call
   </label>
@@ -287,7 +288,7 @@ function submit() {
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="radio" name="blog" value="Traditional marketing channels" id="flexRadioDefault2" >
+  <input class="form-check-input"     type="radio" name="blog" value="Traditional marketing channels" id="flexRadioDefault2" >
   <label class="form-check-label" for="flexRadioDefault2">
   Traditional marketing channels
   </label>

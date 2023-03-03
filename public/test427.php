@@ -24,6 +24,7 @@ session_start();
   $name=$_GET['name'];
   $number=$_GET['number'];
   $_SESSION["id"]=$id;
+  $_SESSION["name"]=$name;
 ?>
 
 <!DOCTYPE html>
@@ -54,14 +55,23 @@ session_start();
 
 
  <table>
- <form method="post" action="<?php echo htmlspecialchars("test379.php");?>" >
+ <form method="post" action="<?php echo htmlspecialchars("test428.php");?>" >
 <tr><td>  
 
 
 <div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Complaint</label>
-  <input class="form-control" id="nu" rows="3"  name="nu"    value="<?php echo $name ?>"   ></input>
+  <label for="exampleFormControlTextarea1" class="form-label">Case</label>
+  <input class="form-control" id="nu" rows="3"  name="case"    value="<?php  ?>"   ></input>
 </div></td></tr>
+
+<tr><td>  
+
+
+<div class="mb-3">
+  <label for="exampleFormControlTextarea1" class="form-label">Rate</label>
+  <input class="form-control" id="nu" rows="3"  name="rate"    value="<?php  ?>"   ></input>
+</div></td></tr>
+
 
 
 </table>

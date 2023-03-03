@@ -16,7 +16,7 @@ const App = () => {
     <header>
       <div className="nav-area">
         <a href="/#" className="logo">
-         NCC
+         Ncc
         </a>
         <Navbar />
         <Switch>

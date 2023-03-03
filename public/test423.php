@@ -102,6 +102,7 @@ order by con_date");
 	
 
 	 <th>Category</th>
+	 <th>Source</th>
      <th>Deal</th>
      <th>Stage</th>
   </tr>
@@ -135,6 +136,7 @@ else if($y=="*" && $c!=""){
 	echo"<td>"."</td>";
     echo"<td>"."</td>";
     echo"<td>"."</td>";
+	echo"<td>"."</td>";
     echo "</tr>";
 	
 	
@@ -150,6 +152,7 @@ else if($y=="*" && $c!=""){
 		$email=$row['email'];
 	 	
 		$category=$row['category'];
+		$category=$row['source'];
 		$stage=$row['stage'];
 
     
@@ -162,6 +165,7 @@ else if($y=="*" && $c!=""){
 	 
 	 echo"<td>".$row['email']."</td>";
 	  echo "<td>".$row['category']."</td>";
+	  echo "<td>".$row['source']."</td>";
       echo "<td>".$row['name']."</td>";
       echo "<td>".$row['stage']."</td>";
 	

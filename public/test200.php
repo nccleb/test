@@ -437,7 +437,7 @@ for ($i=1;$i<=$lig12["co"];$i++){
 <div class="mb-3">
        
             <div class="form-group">
-                <input class="form-control" type="file" name="uploadfile" value="" />
+                <input class="form-control" type="file" name="fileToUpload" value="" />
             </div>
   <div>   
     

@@ -50,19 +50,31 @@ if (!preg_match("/^[0-9]*$/",$nu)) {
 }
 
 
-
-
-
-
-
-	
-	
-	
 $idr = mysqli_connect("localhost", "root", "1Sys9Admeen72", "nccleb_test");
 if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
+
+
+$stmt = $idr->prepare("select *  from client where id=?");
+$stmt->bind_param("i",$nu);
+$stmt->execute();
+$result = $stmt ->get_result();
+$stmt->close();
+   $lig=$result->fetch_assoc();
+
+   
+
+  $nui=$lig['filename'];
+
+
+
+
+
+	
+	
+
 
 
      $req4=@mysqli_query($idr,"select id from client ");
@@ -88,6 +100,10 @@ if (mysqli_connect_errno()) {
 	
 
 	$req1=@mysqli_query($idr,"delete from client  where id='{$nu}' ");
+
+
+    unlink("/wamp64/www/testapp/public/image/$nui");
+
 	
 	$t=1;
 	}
